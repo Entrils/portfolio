@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Магазин товаров",
+        "imageSrc": "projects/project.png",
+        "description": "Проект - демонстрания навыков верстки с использованием HTML/CSS",
+        "skills": ["HTML", "CSS"],
+        "demo": "",
+        "source": ""
+    },
+    {
+        "title": "Корзина",
+        "imageSrc": "projects/project.png",
+        "description": "Проект - реализация корзины товаров, используя React",
+        "skills": ["React", "JS", "HTML"],
+        "demo": "",
+        "source": ""
+    },
+    {
+        "title": "Проект 3",
+        "imageSrc": "projects/project.png",
+        "description": "",
+        "skills": ["Redux","React","HTML"],
+        "demo": "",
+        "source": ""
+    },
+    {
+        "title": "Калькулятор",
+        "imageSrc": "projects/project.png",
+        "description": "Простой калькулятор написанный с помощью JavaScript",
+        "skills": ["HTML","CSS","JavaScript"],
+        "demo": "",
+        "source": ""
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "title": "HTML",
+        "imageSrc": "skills/html.png"
+    },
+    {
+        "title": "CSS",
+        "imageSrc": "skills/css.png"
+    },
+    {
+        "title": "React",
+        "imageSrc": "skills/react.png"
+    },
+    {
+        "title": "Node",
+        "imageSrc": "skills/node.png"
+    },
+    {
+        "title": "Vue",
+        "imageSrc": "skills/vue.png"
+    },
+    {
+        "title": "PostgreSQL",
+        "imageSrc": "skills/postgresql.png"
+    },
+    {
+        "title": "Figma",
+        "imageSrc": "skills/figma.png"
+    },
+    {
+        "title": "Linux",
+        "imageSrc": "skills/linux.png"
+    },
+    {
+        "title": "JavaScript",
+        "imageSrc": "skills/js.png"
+    },
+    {
+        "title": "Redux",
+        "imageSrc": "skills/redux.png"
+    },
+    {
+        "title": "Git",
+        "imageSrc": "skills/git.png"
+    },
+    {
+        "title": "React-router",
+        "imageSrc": "skills/react-router.png"
+    }
+]

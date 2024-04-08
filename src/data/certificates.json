@@ -1,0 +1,56 @@
+[
+    {
+        "title": "JavaScript. Уровень 1. Основы JavaScript",
+        "imageSrc": "certificates/JS1.png",
+        "description": "",
+        "data": ""
+    },
+    {
+        "title": "JavaScript. Уровень 2. Расширенные возможности",
+        "imageSrc": "certificates/JS2.gif",
+        "description": "",
+        "data": ""
+    },
+    {
+        "title": "JavaScript. Уровень 3. ESNext",
+        "imageSrc": "certificates/JS3.gif",
+        "description": "",
+        "data": ""
+    },
+    {
+        "title": "JavaScript. Уровень 4. Fetch/AJAX API",
+        "imageSrc": "certificates/JS4.gif",
+        "description": "",
+        "data": ""
+    },
+    {
+        "title": "JavaScript. Уровень 5. Серверное программирование на Node.js",
+        "imageSrc": "certificates/JS5.gif",
+        "description": "",
+        "data": ""
+    },
+    {
+        "title": "JavaScript. Уровень 6. Библиотека React.js",
+        "imageSrc": "certificates/JS6.gif",
+        "description": "",
+        "data": ""
+    },
+    {
+        "title": "JavaScript. Уровень 7. Redux и react - router",
+        "imageSrc": "certificates/JS7.gif",
+        "description": "",
+        "data": ""
+    },
+    {
+        "title": "JavaScript. Уровень 8. Vue.js – открытый фреймворк на JavaScript для разработки веб - приложений",
+        "imageSrc": "certificates/JS8.gif",
+        "description": "",
+        "data": ""
+    },
+    {
+        "title": "JavaScript. Уровень 10. HTML5 API",
+        "imageSrc": "certificates/JS10.gif",
+        "description": "",
+        "data": ""
+    }
+]
