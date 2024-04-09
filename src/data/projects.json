@@ -1,11 +1,11 @@
 [
     {
-        "title": "Магазин товаров",
+        "title": "Админ-панель магазина товаров",
         "imageSrc": "projects/project.png",
         "description": "Проект - демонстрания навыков верстки с использованием HTML/CSS",
         "skills": ["HTML", "CSS"],
-        "demo": "",
-        "source": ""
+        "demo": "https://dashboard-entrils.netlify.app/",
+        "source": "https://github.com/Entrils/AdminPanelDesign"
     },
     {
         "title": "Корзина",

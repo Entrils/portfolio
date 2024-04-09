@@ -26,12 +26,16 @@
     gap: 47px;
     list-style: none;
 }
-
+.menuItems a:hover{
+    color: var(--color-text-hover);
+    text-decoration: underline;
+}
 .menuItems a {
     font-size: 25px;
     color: var(--color-text);
     text-decoration: none;
 }
+
 .menuBtn{
     display: none;
 }
@@ -41,7 +45,9 @@
         flex-direction: column;
         align-items: flex-start;
     }
-
+    .menuBtn:hover{
+        transform: scale(1.1);
+    }
     .menu{
         position: absolute;
         right: 0;

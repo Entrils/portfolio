@@ -9,7 +9,7 @@ export const About = () => {
         <h1 className={styles.title}>Привет, я Андрей</h1>
         <p className={styles.description}> Я front-end разработчик, использую React и NodeJS, 
             ниже есть вся информация обо мне!</p>
-        <a href='mailto:needway@list.ru' className={styles.contactBtn}>Связаться со мной</a>
+        <a href='https://t.me/entrils' className={styles.contactBtn}>Связаться со мной</a>
     </div>
     <img src={getImageUrl("about/aboutPhoto.png")}
     alt='Моё фото' className={styles.aboutPhoto}/>

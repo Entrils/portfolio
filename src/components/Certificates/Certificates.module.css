@@ -1,5 +1,6 @@
 @import "../../vars.css";
 
+
 .container{
     color: var(--color-text);
     margin-top: 70px;
@@ -12,7 +13,7 @@
     margin-left: auto;
     margin-right: auto;
     height: 500px;
-    width: 725px;
+    width: 800px;
     display: flex;
     align-items: center;
 }
@@ -28,7 +29,7 @@
 .content{
    height: 100%;
    width: 100%;
-   overflow: hidden;
+   overflow: hidden;    
 }
 
 .certificates{
@@ -52,8 +53,42 @@
     width: 710px;
 }
 
-.arrow{
+.LeftArrow{
     cursor: pointer;
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+}
+
+.LeftArrow:hover{
+    transform: scale(0.9);
+}
+
+.RightArrow:hover{
+    transform: scale(0.9);
+}
+
+.RightArrow{
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 900px){
+    .window{
+        width: 400px;
+        height: 100%;
+    }
+    .certificateImageContainer{
+        height: 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .certificates{
+        width: 900%;
+    }
+    .certificateImageContainer img{
+        width: 100%;
+    }
 }

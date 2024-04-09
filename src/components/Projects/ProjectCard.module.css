@@ -3,16 +3,18 @@
 .container{
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: 15px;
     background: linear-gradient(100deg, #576cbc 0%, #132a53 100%);
     box-shadow: 0 16px 14 px 0 #04152d;
     padding: 18px 24px;
     max-width: 345px;
+    min-width: 345px;
     max-height: 445px;
+    min-height: 445px;
 }
 
 .image{
-    margin-bottom: 13px;
+    margin-bottom: 5px;
 }
 
 .title{
@@ -33,7 +35,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 10px;
     list-style: none;
 }
 
@@ -42,12 +44,12 @@
     font-weight: 400;
     border-radius: 100px;
     background: var(--color-dark);
-    padding: 2px 22px;
+    padding: 2px 17px;
 }
 
 .links{
     width: 100%;
-    margin-top: 25px;
+    margin-top: auto;
     display: flex;
     justify-content: space-around;
 }
@@ -59,5 +61,10 @@
     font-weight: 600;
     border-radius: 100px;
     background: var(--color-primary);
-    padding: 1px 22px;
+    padding: 1px 15px;
+}
+
+.link:hover{
+    transform: scale(0.9);
+    box-shadow: 0 16px 14 px 0 #04152d;
 }
