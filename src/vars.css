@@ -1,15 +1,18 @@
 :root {
     /* цвета */
     --color-text: #fff;
-    --color-primary: #576cbc;
+    --color-text-dark: #0D0D0D;
+    --color-primary: #9FEE00;
     --color-secondary: #19376d;
-    --color-dark: #0b2447;
+    --color-dark: #1c2608;
     --color-bg: #04152d;
     --color-text-hover: #a3a3ad;
-    --color-btn-hover: #09152b;
+    --color-btn-hover: #2b3f02;
+    --color-text-highlited: #9FEE00;
+    --color-skillscont: #181818;
 
     /* шрифты */
-    --font-roboto: "Roboto";
     --font-outfit: "Outfit";
     --font-montseratt: "Montseratt";
+    --font-inter: "Inter Variable";
 }

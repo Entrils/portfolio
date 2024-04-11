@@ -20,10 +20,14 @@
 
 .title{
     color: var(--color-text);
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 700;
-    letter-spacing: 1.75px;
-    text-transform: uppercase;
+    font-family: var(--font-inter);
+    border: solid;
+    padding-left: 10px;
+    border-radius: 40px 40px;
+    border-color: var(--color-primary);
+    width: 235px;
 }
 
 .content{
@@ -36,7 +40,6 @@
     height: 100%;
     display: flex;
     flex-direction: row;
-
     transition: translate;
     transition-property: transform;
     transition-duration: 300ms;
@@ -55,24 +58,36 @@
 
 .LeftArrow{
     cursor: pointer;
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 42px;
     margin-right: 20px;
+    padding: 3px 5px 3px 0px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    color: var(--color-text-dark);
 }
 
 .LeftArrow:hover{
     transform: scale(0.9);
+    background-color: var(--color-btn-hover);
+    color: var(--color-text);
 }
 
 .RightArrow:hover{
     transform: scale(0.9);
+    background-color: var(--color-btn-hover);
+    color: var(--color-text);
 }
 
 .RightArrow{
     cursor: pointer;
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 42px;
     margin-left: 20px;
+    padding: 3px 0px 3px 5px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    color: var(--color-text-dark);
 }
 
 @media screen and (max-width: 900px){

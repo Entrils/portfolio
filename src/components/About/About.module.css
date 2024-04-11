@@ -1,4 +1,5 @@
 @import "../../vars.css";
+@import '@fontsource-variable/inter';
 
 .container{
     position: relative;
@@ -23,7 +24,7 @@
     font-size: 54px;
     font-weight: 900;
     margin-bottom: 33px;
-    font-family: var(--font-outfit);
+    font-family: var(--font-inter);
     background: linear-gradient(
     90deg, rgba(255,255,255,1) 70%,
      rgba(255,255,255,0) 120%);
@@ -33,15 +34,20 @@
 
 .description{
     font-size: 16px;
-    font-family: var(--font-outfit);
+    font-family: var(--font-inter);
     margin-bottom: 52px;
-   
+}
+
+.descriptionHighlited{
+    font-family: var(--font-montseratt);
+    color: var(--color-text-highlited);
+    font-weight: 800;
 }
 
 .contactBtn{
     text-decoration: none;
     background-color: var(--color-primary);
-    color: var(--color-text);
+    color: var(--color-text-dark);
     border-radius: 100px;
     font-size: 16px;
     font-weight: 600;
@@ -51,15 +57,16 @@
 
 .contactBtn:hover{
     background-color: var(--color-btn-hover);
+    color: var(--color-text);
 }
 
 .aboutPhoto{
     width: 35%;
     z-index: 1;
     margin-left: 100px;
-    border-radius: 250px; /* Радиус скругления */
+    border-radius: 50px; /* Радиус скругления */
     border: 1px solid black; /* Параметры рамки */
-    box-shadow: 0 0 7px #559; /* Параметры тени */
+    box-shadow: 0 0 7px var(--color-secondary); /* Параметры тени */
 
     animation-name: floating;
     animation-duration: 3s;

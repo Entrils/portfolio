@@ -7,14 +7,13 @@ export const About = () => {
     <section className={styles.container} id='about'>
     <div className={styles.content}>
         <h1 className={styles.title}>Привет, я Андрей</h1>
-        <p className={styles.description}> Я front-end разработчик, использую React и NodeJS, 
+        <p className={styles.description}> Я <span className={styles.descriptionHighlited}> front-end </span>разработчик, использую <span className={styles.descriptionHighlited}>React</span> и <span className={styles.descriptionHighlited}>NodeJS</span>,
             ниже есть вся информация обо мне!</p>
         <a href='https://t.me/entrils' className={styles.contactBtn}>Связаться со мной</a>
     </div>
     <img src={getImageUrl("about/aboutPhoto.png")}
     alt='Моё фото' className={styles.aboutPhoto}/>
-    <div className={styles.topBlur} />
-    <div className={styles.bottomBlur} />
+
   </section>
   );
 }

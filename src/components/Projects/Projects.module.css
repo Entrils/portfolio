@@ -8,10 +8,14 @@
 }
 
 .title{
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 700;
-    letter-spacing: 1.75px;
-    text-transform: uppercase;
+    font-family: var(--font-inter);
+    border: solid;
+    padding-left: 10px;
+    border-radius: 40px 40px;
+    border-color: var(--color-primary);
+    width: 163px;
 }
 
 .projects {

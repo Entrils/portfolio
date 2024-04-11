@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.0.17",
+    "@fontsource/inter": "^5.0.17",
     "@fontsource/outfit": "^5.0.12",
     "@fontsource/roboto": "^5.0.12",
     "react": "^18.2.0",
