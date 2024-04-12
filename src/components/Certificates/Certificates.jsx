@@ -3,6 +3,7 @@ import styles from "./Certificates.module.css";
 import { getImageUrl } from '../../utils';
 import certificates from "../../data/certificates.json";
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { CSSTransition} from 'react-transition-group'
 
 export const Certificates = ({children}) => {
   const CERT_WIDTH_FULL = 710;
@@ -44,6 +45,7 @@ export const Certificates = ({children}) => {
   },[])
   
   return (
+    
     <section className={styles.container} id='certificates'>
       <h2 className={styles.title}>Сертификаты</h2>
       <div className={styles.window}>

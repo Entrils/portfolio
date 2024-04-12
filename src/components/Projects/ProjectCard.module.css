@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-    background: linear-gradient(100deg, var(--color-btn-hover) 30%, rgba(13,13,13,0.6) 80%);
+    background: var(--color-skillscont);
     box-shadow: 0 1rem 2rem var(--color-dark);
     padding: 18px 24px;
     max-width: 345px;
