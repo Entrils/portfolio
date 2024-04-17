@@ -8,20 +8,20 @@
         "source": "https://github.com/Entrils/AdminPanelDesign"
     },
     {
-        "title": "Корзина",
-        "imageSrc": "projects/project.png",
-        "description": "Проект - реализация корзины товаров, используя React",
-        "skills": ["React", "JS", "HTML"],
+        "title": "Интернет магазин 'Ями Нями'",
+        "imageSrc": "projects/yamiNyami.png",
+        "description": "Интернет магазин по продаже сладостей 'Ями Нями', frontend: React, Mobx, Axios, Backend: PostgreSQL, node.js, Express",
+        "skills": ["React", "Mobx", "Axios", "PostgreSQL", "Express", "NodeJS"],
         "demo": "",
-        "source": ""
+        "source": "https://github.com/Entrils/InternetShop"
     },
     {
-        "title": "Проект 3",
-        "imageSrc": "projects/project.png",
-        "description": "",
-        "skills": ["Redux","React","HTML"],
-        "demo": "",
-        "source": ""
+        "title": "Лабороторные работы с курсов учбеного центра 'Специалист'",
+        "imageSrc": "projects/specialistCourses.png",
+        "description": "Репозиторий со всеми лабораторными работами с курсов(за исключением Vue.js)",
+        "skills": ["Redux","React","JS","NodeJS"],
+        "demo": "https://github.com/Entrils/SpecialistCoursesProjects",
+        "source": "https://github.com/Entrils/SpecialistCoursesProjects"
     },
     {
         "title": "Калькулятор",
