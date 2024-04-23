@@ -24,11 +24,11 @@
         "source": "https://github.com/Entrils/SpecialistCoursesProjects"
     },
     {
-        "title": "Калькулятор",
-        "imageSrc": "projects/project.png",
-        "description": "Простой калькулятор написанный с помощью JavaScript",
-        "skills": ["HTML","CSS","JavaScript"],
-        "demo": "",
-        "source": ""
+        "title": "Шахматы",
+        "imageSrc": "projects/chess.png",
+        "description": "Шахматы с использованием ООП на React и TypeScript",
+        "skills": ["React","TypeScript","CSS"],
+        "demo": "https://github.com/Entrils/chess",
+        "source": "https://github.com/Entrils/chess"
     }
 ]
