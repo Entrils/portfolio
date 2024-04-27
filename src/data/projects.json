@@ -28,7 +28,7 @@
         "imageSrc": "projects/chess.png",
         "description": "Шахматы с использованием ООП на React и TypeScript",
         "skills": ["React","TypeScript","CSS"],
-        "demo": "https://github.com/Entrils/chess",
+        "demo": "https://entrils-chess.netlify.app/",
         "source": "https://github.com/Entrils/chess"
     }
 ]
