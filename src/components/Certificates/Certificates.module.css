@@ -8,16 +8,6 @@
     margin-right: 10%;
 }
 
-.window{
-    margin-top: 70px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 500px;
-    width: 800px;
-    display: flex;
-    align-items: center;
-}
-
 .title{
     color: var(--color-text);
     font-size: 30px;
@@ -30,30 +20,21 @@
     width: 235px;
 }
 
-.content{
-   height: 100%;
-   width: 100%;
-   overflow: hidden;    
-}
-
 .certificates{
-    height: 100%;
+    margin-top: 15px;
+    position: relative;
     display: flex;
-    flex-direction: row;
-    transition: translate;
-    transition-property: transform;
-    transition-duration: 300ms;
-    transition-timing-function: ease-in-out;
+    justify-content: center;
+    align-items: center;
 }
 
-.certificateImageContainer{
-    height: 100%;
-    min-width: 100%;
-    max-width: 100%;
-}
-
-.certificateImageContainer img{
-    width: 710px;
+.carousel{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 500px;
 }
 
 .LeftArrow{
@@ -88,6 +69,49 @@
     background-color: var(--color-primary);
     border-radius: 50%;
     color: var(--color-text-dark);
+}
+
+.slide{
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 7px #666;
+    width: 100%;
+    height: 100%;
+}
+
+
+.slideHdn{
+    display: none;
+}
+
+.indicators{
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+}
+
+.indicatorBtn{
+    background-color: white;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 5px #555;
+    margin: 0 0.2rem;
+    cursor: pointer;
+}
+
+.indicatorBtnInactive{
+    background-color: grey;
+    border-radius: 100%;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 5px #555;
+    margin: 0 0.2rem;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 900px){

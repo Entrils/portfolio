@@ -12,11 +12,11 @@
         "imageSrc": "projects/yamiNyami.png",
         "description": "Интернет магазин по продаже сладостей 'Ями Нями', frontend: React, Mobx, Axios, Backend: PostgreSQL, node.js, Express",
         "skills": ["React", "Mobx", "Axios", "PostgreSQL", "Express", "NodeJS"],
-        "demo": "",
+        "demo": "https://yami-nyami.netlify.app/",
         "source": "https://github.com/Entrils/InternetShop"
     },
     {
-        "title": "Лабороторные работы с курсов учбеного центра 'Специалист'",
+        "title": "Лабороторные работы с курсов учебного центра 'Специалист'",
         "imageSrc": "projects/specialistCourses.png",
         "description": "Репозиторий со всеми лабораторными работами с курсов(за исключением Vue.js)",
         "skills": ["Redux","React","JS","NodeJS"],
