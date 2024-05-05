@@ -30,5 +30,21 @@
         "skills": ["React","TypeScript","CSS"],
         "demo": "https://entrils-chess.netlify.app/",
         "source": "https://github.com/Entrils/chess"
+    },
+    {
+        "title": "Генератор турнирных сеток",
+        "imageSrc": "projects/chess.png",
+        "description": "Генератор турнирных сеток для личного пользования с использованием React и Redux",
+        "skills": ["React","Redux","CSS"],
+        "demo": "",
+        "source": "https://github.com/Entrils/tournaments-brackets"
+    },
+    {
+        "title": "Портфолио для дизайнера",
+        "imageSrc": "projects/chess.png",
+        "description": "Портфолио-одностраничка для дизайнера",
+        "skills": ["React","HTML","CSS"],
+        "demo": "",
+        "source": "https://github.com/Entrils/Designer-Portfolio"
     }
 ]
