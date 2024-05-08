@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './Certificates.module.css'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { getImageUrl } from '../../utils';
 
 export const CertificateSlider = ({data}) => {
 
@@ -19,7 +20,7 @@ export const CertificateSlider = ({data}) => {
     <div className={styles.carousel}>
     <FaChevronLeft className={styles.LeftArrow} onClick={prevSlide}/>
         {data.map((item, index)=>{
-            return <img src={item.imageSrc} alt={item.title} key={index} className={slide === index ? styles.slide : styles.slideHdn}/>
+            return <img src={getImageUrl(item.imageSrc)} alt={item.title} key={index} className={slide === index ? styles.slide : styles.slideHdn}/>
         })}
           <FaChevronRight className={styles.RightArrow} onClick={nextSlide}/>
     <span className={styles.indicators}>
