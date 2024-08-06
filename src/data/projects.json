@@ -33,7 +33,7 @@
     },
     {
         "title": "Генератор турнирных сеток",
-        "imageSrc": "projects/chess.png",
+        "imageSrc": "projects/tournaments.png",
         "description": "Генератор турнирных сеток для личного пользования с использованием React и Redux",
         "skills": ["React","Redux","CSS"],
         "demo": "",
@@ -41,8 +41,8 @@
     },
     {
         "title": "Production Project",
-        "imageSrc": "projects/prodProj.png",
-        "description": "Проект с курсов 'Провдвинутый фронтенд', реализованный на TypeScript + react, настроенный с нуля WebPack, множество написанных тестов и многое другое",
+        "imageSrc": "projects/pp.png",
+        "description": "Проект с курсов 'Провдвинутый фронтенд', реализованный на TypeScript + react, настроенный с нуля WebPack, множество написанных тестов и другое",
         "skills": ["React","TypeScript","SCSS", "Jest", "Redux", "StoryBook"],
         "demo": "",
         "source": "https://github.com/Entrils/production-project"
