@@ -12,6 +12,7 @@
 
 .title{
     font-size: 30px;
+    user-select: none;
     font-weight: 600;
     text-decoration: none;
     color: var(--color-text);
@@ -28,6 +29,7 @@
 
 .menuItems {
     display: flex;
+    user-select: none;
     gap: 47px;
     list-style: none;
 }

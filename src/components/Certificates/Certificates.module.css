@@ -3,13 +3,14 @@
 
 .container{
     color: var(--color-text);
-    margin-top: 70px;
+    margin-top: 80px;
     margin-left: 10%;
     margin-right: 10%;
 }
 
 .title{
     color: var(--color-text);
+    user-select: none;
     font-size: 30px;
     font-weight: 700;
     font-family: var(--font-inter);
@@ -21,7 +22,8 @@
 }
 
 .certificates{
-    margin-top: 40px;
+    margin-top: 80px;
+    user-select: none;
     position: relative;
     display: flex;
     justify-content: center;
@@ -49,13 +51,11 @@
 }
 
 .LeftArrow:hover{
-    transform: scale(0.9);
     background-color: var(--color-btn-hover);
     color: var(--color-text);
 }
 
 .RightArrow:hover{
-    transform: scale(0.9);
     background-color: var(--color-btn-hover);
     color: var(--color-text);
 }

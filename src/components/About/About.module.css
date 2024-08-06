@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 49px;
+    margin-top: 80px;
     z-index: 1;
     margin-left: 10%;
     margin-right: 10%;
@@ -22,6 +22,7 @@
 
 .title{
     font-size: 54px;
+    user-select: none;
     font-weight: 900;
     margin-bottom: 33px;
     font-family: var(--font-inter);
@@ -46,6 +47,7 @@
 
 .contactBtn{
     text-decoration: none;
+    user-select: none;
     background-color: var(--color-primary);
     color: var(--color-text-dark);
     border-radius: 100px;
@@ -62,6 +64,7 @@
 
 .aboutPhoto{
     width: 35%;
+    user-select: none;
     z-index: 1;
     margin-left: 100px;
     border-radius: 50px; /* Радиус скругления */

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+/* eslint-disable react/prop-types */
+import { useState } from 'react'
 import styles from './Certificates.module.css'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { getImageUrl } from '../../utils';

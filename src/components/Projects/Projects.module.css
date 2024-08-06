@@ -1,7 +1,7 @@
 @import "../../vars.css";
 
 .container{
-    margin-top: 76px;
+    margin-top: 80px;
     color: var(--color-text);
     margin-left: 10%;
     margin-right: 10%;
@@ -19,7 +19,7 @@
 }
 
 .projects {
-    margin-top: 40px;
+    margin-top: 80px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

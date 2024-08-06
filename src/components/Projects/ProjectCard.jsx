@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import {getImageUrl} from "../../utils";
 import styles from "./ProjectCard.module.css";
 

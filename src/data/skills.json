@@ -16,8 +16,8 @@
         "imageSrc": "skills/node.png"
     },
     {
-        "title": "Vue",
-        "imageSrc": "skills/vue.png"
+        "title": "TypeScript",
+        "imageSrc": "skills/ts.png"
     },
     {
         "title": "PostgreSQL",
@@ -46,5 +46,21 @@
     {
         "title": "React-router",
         "imageSrc": "skills/react-router.png"
+    },
+    {
+        "title": "Jest",
+        "imageSrc": "skills/jest.png"
+    },
+    {
+        "title": "Storybook",
+        "imageSrc": "skills/storybook.png"
+    },
+    {
+        "title": "RTL",
+        "imageSrc": "skills/RTL.png"
+    },
+    {
+        "title": "i18next",
+        "imageSrc": "skills/i18n.png"
     }
 ]

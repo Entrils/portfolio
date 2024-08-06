@@ -40,11 +40,11 @@
         "source": "https://github.com/Entrils/tournaments-brackets"
     },
     {
-        "title": "Портфолио для дизайнера",
-        "imageSrc": "projects/chess.png",
-        "description": "Портфолио-одностраничка для дизайнера",
-        "skills": ["React","HTML","CSS"],
+        "title": "Production Project",
+        "imageSrc": "projects/prodProj.png",
+        "description": "Проект с курсов 'Провдвинутый фронтенд', реализованный на TypeScript + react, настроенный с нуля WebPack, множество написанных тестов и многое другое",
+        "skills": ["React","TypeScript","SCSS", "Jest", "Redux", "StoryBook"],
         "demo": "",
-        "source": "https://github.com/Entrils/Designer-Portfolio"
+        "source": "https://github.com/Entrils/production-project"
     }
 ]

@@ -2,7 +2,7 @@
 
 .container{
     color: var(--color-text);
-    margin-top: 120px;
+    margin-top: 80px;
     margin-left: 10%;
     margin-right: 10%;
 }
@@ -25,11 +25,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 .skills{
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     gap: 70px;
@@ -75,7 +75,9 @@
     padding-right: 7px;
     color: var(--color-text-dark);
     transform: rotate(345deg);
+    user-select: none;
 }
+
 
 @media screen and (max-width: 830px) {
     .content{
