@@ -44,7 +44,15 @@
         "imageSrc": "projects/pp.png",
         "description": "Проект с курсов 'Провдвинутый фронтенд', реализованный на TypeScript + react, настроенный с нуля WebPack, множество написанных тестов и другое",
         "skills": ["React","TypeScript","SCSS", "Jest", "Redux", "StoryBook"],
-        "demo": "",
+        "demo": "https://entrils-prod-app.netlify.app",
         "source": "https://github.com/Entrils/production-project"
+    },
+    {
+        "title": "Designer Portfolio",
+        "imageSrc": "projects/semary.png",
+        "description": "Одностраничное SPA-приложение для портфолио дизайнера, сделанное по макету Figma",
+        "skills": ["React","HTML", "CSS"],
+        "demo": "https://semary.netlify.app/",
+        "source": "https://github.com/Entrils/DesignerPortfolio"
     }
 ]
