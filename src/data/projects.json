@@ -54,5 +54,13 @@
         "skills": ["React","HTML", "CSS"],
         "demo": "https://semary.netlify.app/",
         "source": "https://github.com/Entrils/DesignerPortfolio"
+    },
+     {
+        "title": "To-Do list",
+        "imageSrc": "projects/todolist.png",
+        "description": "To-Do лист с возможностью добавлять/удалять/редактировать задачи, их сортировкой и сохранением состояния в localStorage",
+        "skills": ["React","HTML", "CSS"],
+        "demo": "https://entrils-todo-list.netlify.app/",
+        "source": "https://github.com/Entrils/entrils-todo-list"
     }
 ]
