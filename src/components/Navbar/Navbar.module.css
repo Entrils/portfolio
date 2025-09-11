@@ -1,91 +1,107 @@
 @import "../../vars.css";
 
 .navbar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 61px;
-    z-index: 2;
-    margin: 0 10%;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10%;
+  margin: 0;
+  z-index: 100;
+  background: rgba(15, 15, 35, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.title{
-    font-size: 30px;
-    user-select: none;
-    font-weight: 600;
-    text-decoration: none;
-    color: var(--color-text);
-    border: solid;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 40px 40px;
-    border-color: var(--color-primary);
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-text);
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
 
-.menu{
-    display: flex;
+.title:hover {
+  color: var(--color-primary);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
 }
 
 .menuItems {
-    display: flex;
-    user-select: none;
-    gap: 47px;
-    list-style: none;
-}
-.menuItems a:hover{
-    color: var(--color-text-hover);
-    text-decoration: underline;
-}
-.menuItems a {
-    font-size: 20px;
-    color: var(--color-text);
-    text-decoration: none;
+  display: flex;
+  gap: 36px;
+  list-style: none;
 }
 
-.menuBtn{
-    display: none;
+.menuItems a {
+  font-size: 18px;
+  color: var(--color-text);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menuItems a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.menuItems a:hover {
+  color: var(--color-primary);
+}
+
+.menuItems a:hover::after {
+  width: 100%;
+}
+
+.menuBtn {
+  display: none;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease;
+}
+
+.menuBtn:hover {
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 1200px) {
-    .navbar{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .menuBtn:hover{
-        transform: scale(1.1);
-    }
-    .menu{
-        position: absolute;
-        right: 0;
-        margin-right: 10%;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 11px;
-        z-index: 3;
-    }
+  .menuBtn {
+    display: block;
+  }
 
-    .menuBtn{
-        display: block;
-        cursor: pointer;
-    }
+  .menuItems {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    position: absolute;
+    right: 10%;
+    top: 70px;
+    background: rgba(25, 25, 80, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 24px 28px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
 
-    .menuItems{
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 13px;
-        border-radius: 10px;
-        background: rgb(25,25,110);
-        background: linear-gradient(
-            0deg,rgba(25,25,109,0.2) 0%,
-         rgba(25,25,109,1) 100%);
-         padding: 24px 33px;
-         box-shadow: 0 0 4px 0 rgba(0,0,0,0.25);
-    }
+  .menuOpen {
+    display: flex;
+  }
 
-    .menuOpen{
-        display: flex;
-        z-index: 1;
-    }
+  .menuItems a {
+    font-size: 20px;
+  }
 }

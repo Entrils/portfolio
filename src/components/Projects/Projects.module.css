@@ -1,30 +1,35 @@
 @import "../../vars.css";
 
-.container{
-    margin-top: 80px;
-    color: var(--color-text);
-    margin-left: 10%;
-    margin-right: 10%;
+.container {
+  margin: 100px 10% 0;
+  color: var(--color-text);
 }
 
-.title{
-    font-size: 30px;
-    font-weight: 700;
-    font-family: var(--font-inter);
-    border: solid;
-    padding-left: 10px;
-    border-radius: 40px 40px;
-    border-color: var(--color-primary);
-    width: 163px;
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  font-family: var(--font-inter);
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  display: inline-block;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), #6ea8fe);
+  border-radius: 2px;
 }
 
 .projects {
-    margin-top: 80px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  justify-content: center;
+  justify-items: center;
 }
