@@ -31,5 +31,6 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
   justify-content: center;
-  justify-items: center;
+  justify-items: stretch;
+  align-items: stretch;
 }

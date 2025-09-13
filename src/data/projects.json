@@ -55,12 +55,20 @@
         "demo": "https://semary.netlify.app/",
         "source": "https://github.com/Entrils/DesignerPortfolio"
     },
-     {
+    {
         "title": "To-Do list",
         "imageSrc": "projects/todolist.png",
         "description": "To-Do лист с возможностью добавлять/удалять/редактировать задачи, их сортировкой и сохранением состояния в localStorage",
         "skills": ["React","HTML", "CSS"],
         "demo": "https://entrils-todo-list.netlify.app/",
         "source": "https://github.com/Entrils/entrils-todo-list"
+    },
+    {
+        "title": "Игра Idle Village",
+        "imageSrc": "projects/idle-village.png",
+        "description": "Игра Idle Village, суть которой в бесконечном развитии своей деревни. FSD структура; React + TS + Redux; кастомные хуки, редюсеры, сохранение данных с помощью Redux-persist. Система достижений и уведомлений, бесконечная генерация.",
+        "skills": ["React","TypeScript", "Redux", "CSS"],
+        "demo": "https://entrils-idle-village.netlify.app/",
+        "source": "https://github.com/Entrils/idle-village"
     }
 ]
