@@ -15,21 +15,16 @@
   margin-bottom: 60px;
 }
 
-.title::after {
-  content: "";
+.underline {
+  display: block;
   position: absolute;
   left: 0;
   bottom: -8px;
-  width: 100%;
   height: 3px;
+  width: 100%;
   background: linear-gradient(90deg, var(--color-primary), #6ea8fe);
   border-radius: 2px;
-  animation: underlineExpand 2s ease infinite alternate;
-}
-
-@keyframes underlineExpand {
-  from { width: 40%; }
-  to { width: 100%; }
+  transform-origin: left;
 }
 
 .skillsGrid {
@@ -52,9 +47,10 @@
   cursor: default;
 }
 
+
 .skillCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(100, 150, 255, 0.4);
+  box-shadow: 0 8px 20px rgba(100, 150, 255, 0.35);
 }
 
 .skillImageContainer {
@@ -65,11 +61,12 @@
   justify-content: center;
   width: 70px;
   height: 70px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skillCard:hover .skillImageContainer {
   transform: rotate(8deg) scale(1.1);
+  box-shadow: 0 0 15px rgba(110,168,254,0.6);
 }
 
 .skillImageContainer img {

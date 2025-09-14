@@ -19,7 +19,7 @@ export const CertificateSlider = ({ data }) => {
     setSlide((prev) => (prev === 0 ? data.length - 1 : prev - 1));
   };
 
-  // 🚀 Автоплей с паузой при наведении
+  // Автоплей с паузой при наведении
   useEffect(() => {
     if (!isPaused) {
       intervalRef.current = setInterval(nextSlide, 5000);
@@ -68,7 +68,7 @@ export const CertificateSlider = ({ data }) => {
           src={getImageUrl(item.imageSrc)}
           alt={item.title}
           key={index}
-          loading="lazy"   // ✅ Lazy-loading
+          loading="lazy"
           className={slide === index ? styles.slide : styles.slideHdn}
         />
       ))}

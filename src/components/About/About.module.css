@@ -30,6 +30,19 @@
   animation: gradientMove 6s ease-in-out infinite;
 }
 
+.title .typed-cursor {
+  font-weight: 300;
+  font-size: inherit;
+  color: var(--color-primary);
+  animation: blink 0.7s infinite;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -63,6 +76,22 @@
 }
 
 .contactBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+  color: var(--color-text);
+}
+
+.buttonsRow {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cvBtn {
+  background: linear-gradient(135deg, #6ea8fe, #00c6ff);
+}
+
+.cvBtn:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.25);
   color: var(--color-text);
