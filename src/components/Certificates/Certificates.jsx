@@ -1,13 +1,13 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import styles from "./Certificates.module.css";
-import { certificates } from '../../data/certificates.json';
-import { CertificateSlider } from './CertificateSlider';
+import { certificates } from "../../data/certificates.json";
+import { CertificateSlider } from "./CertificateSlider";
 
 export const Certificates = () => {
   return (
     <motion.section
       className={styles.container}
-      id='certificates'
+      id="certificates"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -37,7 +37,7 @@ export const Certificates = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <CertificateSlider data={certificates}/>
+        <CertificateSlider data={certificates} />
       </motion.div>
     </motion.section>
   );

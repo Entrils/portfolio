@@ -1,39 +1,92 @@
-/* eslint-disable react/prop-types */
-import { useState, useEffect, useRef } from 'react'
-import styles from './Certificates.module.css'
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { getImageUrl } from '../../utils';
+﻿/* eslint-disable react/prop-types */
+import { useState, useEffect, useRef, useCallback } from "react";
+import styles from "./Certificates.module.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { getImageUrl } from "../../utils";
 
 export const CertificateSlider = ({ data }) => {
   const [slide, setSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [loadedSlides, setLoadedSlides] = useState(() => new Set([0]));
   const intervalRef = useRef(null);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
-  const nextSlide = () => {
-    setSlide((prev) => (prev === data.length - 1 ? 0 : prev + 1));
-  };
+  const markSlideAsLoaded = useCallback((index) => {
+    setLoadedSlides((prev) => {
+      if (prev.has(index)) {
+        return prev;
+      }
 
-  const prevSlide = () => {
-    setSlide((prev) => (prev === 0 ? data.length - 1 : prev - 1));
-  };
+      const next = new Set(prev);
+      next.add(index);
+      return next;
+    });
+  }, []);
 
-  // Автоплей с паузой при наведении
+  const goToSlide = useCallback(
+    (index) => {
+      markSlideAsLoaded(index);
+      setSlide(index);
+    },
+    [markSlideAsLoaded]
+  );
+
+  const nextSlide = useCallback(() => {
+    setSlide((prev) => {
+      const nextIndex = prev === data.length - 1 ? 0 : prev + 1;
+      markSlideAsLoaded(nextIndex);
+      return nextIndex;
+    });
+  }, [data.length, markSlideAsLoaded]);
+
+  const prevSlide = useCallback(() => {
+    setSlide((prev) => {
+      const prevIndex = prev === 0 ? data.length - 1 : prev - 1;
+      markSlideAsLoaded(prevIndex);
+      return prevIndex;
+    });
+  }, [data.length, markSlideAsLoaded]);
+
+  useEffect(() => {
+    if (data.length < 2) {
+      return;
+    }
+
+    const nextIndex = slide === data.length - 1 ? 0 : slide + 1;
+    const prevIndex = slide === 0 ? data.length - 1 : slide - 1;
+
+    markSlideAsLoaded(nextIndex);
+    markSlideAsLoaded(prevIndex);
+  }, [data.length, markSlideAsLoaded, slide]);
+
   useEffect(() => {
     if (!isPaused) {
       intervalRef.current = setInterval(nextSlide, 5000);
     }
     return () => clearInterval(intervalRef.current);
-  }, [isPaused, slide]);
+  }, [isPaused, slide, nextSlide]);
 
-  // 📱 Swipe-логика
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "ArrowLeft") {
+        prevSlide();
+      }
+      if (event.key === "ArrowRight") {
+        nextSlide();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [nextSlide, prevSlide]);
+
+  const handleTouchStart = (event) => {
+    touchStartX.current = event.touches[0].clientX;
   };
 
-  const handleTouchMove = (e) => {
-    touchEndX.current = e.touches[0].clientX;
+  const handleTouchMove = (event) => {
+    touchEndX.current = event.touches[0].clientX;
   };
 
   const handleTouchEnd = () => {
@@ -60,27 +113,49 @@ export const CertificateSlider = ({ data }) => {
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
+      aria-label="Слайдер сертификатов"
     >
-      <FaChevronLeft className={styles.LeftArrow} onClick={prevSlide} />
+      <button
+        type="button"
+        className={styles.LeftArrow}
+        onClick={prevSlide}
+        aria-label="Предыдущий сертификат"
+      >
+        <FaChevronLeft />
+      </button>
 
-      {data.map((item, index) => (
-        <img
-          src={getImageUrl(item.imageSrc)}
-          alt={item.title}
-          key={index}
-          loading="lazy"
-          className={slide === index ? styles.slide : styles.slideHdn}
-        />
-      ))}
+      {data.map((item, index) =>
+        loadedSlides.has(index) ? (
+          <img
+            src={getImageUrl(item.imageSrc)}
+            alt={item.title}
+            key={item.imageSrc}
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchPriority={index === 0 ? "high" : "auto"}
+            decoding="async"
+            className={slide === index ? styles.slide : styles.slideHdn}
+          />
+        ) : null
+      )}
 
-      <FaChevronRight className={styles.RightArrow} onClick={nextSlide} />
+      <button
+        type="button"
+        className={styles.RightArrow}
+        onClick={nextSlide}
+        aria-label="Следующий сертификат"
+      >
+        <FaChevronRight />
+      </button>
 
-      <span className={styles.indicators}>
-        {data.map((_, index) => (
+      <span className={styles.indicators} aria-live="polite">
+        {data.map((item, index) => (
           <button
-            key={index}
-            onClick={() => setSlide(index)}
-            className={slide === index ? styles.indicatorBtn : styles.indicatorBtnInactive}
+            key={`dot-${item.imageSrc}`}
+            onClick={() => goToSlide(index)}
+            className={
+              slide === index ? styles.indicatorBtn : styles.indicatorBtnInactive
+            }
+            aria-label={`Перейти к сертификату ${index + 1}`}
           ></button>
         ))}
       </span>

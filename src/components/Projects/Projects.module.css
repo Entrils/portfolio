@@ -1,11 +1,10 @@
-@import "../../vars.css";
+﻿@import "../../vars.css";
 
 .container {
   margin: 100px 10%;
   color: var(--color-text);
   text-align: center;
 }
-
 
 .title {
   font-size: 32px;
@@ -21,7 +20,7 @@
   bottom: -8px;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-primary), #6ea8fe);
+  background: linear-gradient(90deg, var(--color-primary), #96ccff);
   border-radius: 2px;
   display: block;
 }
@@ -29,7 +28,7 @@
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
+  gap: 34px;
   justify-content: center;
   justify-items: stretch;
   align-items: stretch;

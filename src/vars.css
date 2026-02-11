@@ -1,18 +1,17 @@
-:root {
-    /* цвета */
-    --color-text: #fff;
-    --color-text-dark: #0D0D0D;
-    --color-primary: #9FEE00;
-    --color-secondary: #19376d;
-    --color-dark: #1c2608;
-    --color-bg: #04152d;
-    --color-text-hover: #a3a3ad;
-    --color-btn-hover: #2b3f02;
-    --color-text-highlited: #9FEE00;
-    --color-skillscont: #181818;
+﻿:root {
+  --color-text: #f5f7fb;
+  --color-text-dark: #111319;
+  --color-text-muted: #bdc5d4;
+  --color-primary: #c8f560;
+  --color-secondary: #2c3445;
+  --color-dark: #1a1f2b;
+  --color-bg: #0d111a;
+  --color-text-hover: #d7deec;
+  --color-btn-hover: #b9ee3f;
+  --color-text-highlited: #c8f560;
+  --color-skillscont: #141925;
 
-    /* шрифты */
-    --font-outfit: "Outfit";
-    --font-montseratt: "Montseratt";
-    --font-inter: "Inter Variable";
+  --font-outfit: "Outfit", sans-serif;
+  --font-montseratt: "Montserrat", sans-serif;
+  --font-inter: "Inter Variable", sans-serif;
 }

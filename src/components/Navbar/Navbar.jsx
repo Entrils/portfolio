@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+﻿import { useState, useEffect, useRef } from "react";
 import styles from "./Navbar.module.css";
 import { getImageUrl } from "../../utils.js";
 
@@ -38,7 +38,7 @@ export const Navbar = () => {
     const animateProgress = () => {
       setScrollProgress((prev) => {
         const diff = targetProgress.current - prev;
-        const newValue = prev + diff * 0.1; // скорость "догонялки"
+        const newValue = prev + diff * 0.1;
         if (Math.abs(diff) > 0.1) {
           animationFrame.current = requestAnimationFrame(animateProgress);
         }
@@ -51,11 +51,7 @@ export const Navbar = () => {
       setScrolled(currentScrollY > 50);
 
       if (window.innerWidth <= 1200) {
-        if (currentScrollY > lastScrollY) {
-          setShowNavbar(false);
-        } else {
-          setShowNavbar(true);
-        }
+        setShowNavbar(currentScrollY <= lastScrollY);
       } else {
         setShowNavbar(true);
       }
@@ -85,7 +81,7 @@ export const Navbar = () => {
         }`}
       >
         <a className={styles.title} href="/">
-          Портфолио
+          Андрей Савельев
         </a>
 
         <div className={styles.menu}>
@@ -96,7 +92,7 @@ export const Navbar = () => {
                 ? getImageUrl("navbar/closeIcon.png")
                 : getImageUrl("navbar/menuIcon.png")
             }
-            alt="menu-button"
+            alt="Кнопка меню"
             onClick={() => setMenuOpen(!menuOpen)}
           />
 

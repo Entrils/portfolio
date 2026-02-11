@@ -1,74 +1,82 @@
-[
-    {
-        "title": "Админ-панель магазина товаров",
-        "imageSrc": "projects/project.png",
-        "description": "Проект - демонстрания навыков верстки с использованием HTML/CSS",
-        "skills": ["HTML", "CSS"],
-        "demo": "https://dashboard-entrils.netlify.app/",
-        "source": "https://github.com/Entrils/AdminPanelDesign"
-    },
-    {
-        "title": "Интернет магазин 'Ями Нями'",
-        "imageSrc": "projects/yamiNyami.png",
-        "description": "Интернет магазин по продаже сладостей 'Ями Нями', frontend: React, Mobx, Axios, Backend: PostgreSQL, node.js, Express",
-        "skills": ["React", "Mobx", "Axios", "PostgreSQL", "Express", "NodeJS"],
-        "demo": "https://yami-nyami.netlify.app/",
-        "source": "https://github.com/Entrils/InternetShop"
-    },
-    {
-        "title": "Лабороторные работы с курсов учебного центра 'Специалист'",
-        "imageSrc": "projects/specialistCourses.png",
-        "description": "Репозиторий со всеми лабораторными работами с курсов(за исключением Vue.js)",
-        "skills": ["Redux","React","JS","NodeJS"],
-        "demo": "https://github.com/Entrils/SpecialistCoursesProjects",
-        "source": "https://github.com/Entrils/SpecialistCoursesProjects"
-    },
-    {
-        "title": "Шахматы",
-        "imageSrc": "projects/chess.png",
-        "description": "Шахматы с использованием ООП на React и TypeScript",
-        "skills": ["React","TypeScript","CSS"],
-        "demo": "https://entrils-chess.netlify.app/",
-        "source": "https://github.com/Entrils/chess"
-    },
-    {
-        "title": "Генератор турнирных сеток",
-        "imageSrc": "projects/tournaments.png",
-        "description": "Генератор турнирных сеток для личного пользования с использованием React и Redux",
-        "skills": ["React","Redux","CSS"],
-        "demo": "",
-        "source": "https://github.com/Entrils/tournaments-brackets"
-    },
-    {
-        "title": "Production Project",
-        "imageSrc": "projects/pp.png",
-        "description": "Проект с курсов 'Провдвинутый фронтенд', реализованный на TypeScript + react, настроенный с нуля WebPack, множество написанных тестов и другое",
-        "skills": ["React","TypeScript","SCSS", "Jest", "Redux", "StoryBook"],
-        "demo": "https://entrils-prod-app.netlify.app",
-        "source": "https://github.com/Entrils/production-project"
-    },
-    {
-        "title": "Designer Portfolio",
-        "imageSrc": "projects/semary.png",
-        "description": "Одностраничное SPA-приложение для портфолио дизайнера, сделанное по макету Figma",
-        "skills": ["React","HTML", "CSS"],
-        "demo": "https://semary.netlify.app/",
-        "source": "https://github.com/Entrils/DesignerPortfolio"
-    },
-    {
-        "title": "To-Do list",
-        "imageSrc": "projects/todolist.png",
-        "description": "To-Do лист с возможностью добавлять/удалять/редактировать задачи, их сортировкой и сохранением состояния в localStorage",
-        "skills": ["React","HTML", "CSS"],
-        "demo": "https://entrils-todo-list.netlify.app/",
-        "source": "https://github.com/Entrils/entrils-todo-list"
-    },
-    {
-        "title": "Игра Idle Village",
-        "imageSrc": "projects/idle-village.png",
-        "description": "Игра Idle Village, суть которой в бесконечном развитии своей деревни. FSD структура; React + TS + Redux; кастомные хуки, редюсеры, сохранение данных с помощью Redux-persist. Система достижений и уведомлений, бесконечная генерация.",
-        "skills": ["React","TypeScript", "Redux", "CSS"],
-        "demo": "https://entrils-idle-village.netlify.app/",
-        "source": "https://github.com/Entrils/idle-village"
-    }
+﻿[
+  {
+    "title": "Админ-панель магазина",
+    "imageSrc": "projects/project.png",
+    "description": "Учебный проект по верстке интерфейса админки: таблицы, карточки, базовая сетка и адаптив.",
+    "skills": ["HTML", "CSS"],
+    "demo": "https://dashboard-entrils.netlify.app/",
+    "source": "https://github.com/Entrils/AdminPanelDesign"
+  },
+  {
+    "title": "Интернет-магазин «Ями Нями»",
+    "imageSrc": "projects/yamiNyami.png",
+    "description": "Полноценный pet-проект магазина сладостей: каталог, корзина, API-запросы, frontend на React и backend на Node.js/Express + PostgreSQL.",
+    "skills": ["React", "Mobx", "Axios", "PostgreSQL", "Express", "Node.js"],
+    "demo": "https://yami-nyami.netlify.app/",
+    "source": "https://github.com/Entrils/InternetShop"
+  },
+  {
+    "title": "Лабораторные с курсов «Специалист»",
+    "imageSrc": "projects/specialistCourses.png",
+    "description": "Сборник практических работ по frontend и JavaScript: компоненты, состояние, роутинг, Node.js. Использую как архив решений и прогресса.",
+    "skills": ["Redux", "React", "JavaScript", "Node.js"],
+    "demo": "https://github.com/Entrils/SpecialistCoursesProjects",
+    "source": "https://github.com/Entrils/SpecialistCoursesProjects"
+  },
+  {
+    "title": "Шахматы",
+    "imageSrc": "projects/chess.png",
+    "description": "Шахматная игра на React + TypeScript с объектной моделью фигур и логикой ходов.",
+    "skills": ["React", "TypeScript", "CSS"],
+    "demo": "https://entrils-chess.netlify.app/",
+    "source": "https://github.com/Entrils/chess"
+  },
+  {
+    "title": "Генератор турнирных сеток",
+    "imageSrc": "projects/tournaments.png",
+    "description": "Инструмент для создания турнирных таблиц для личного использования. Основной фокус: UX редактирования и управление состоянием.",
+    "skills": ["React", "Redux", "CSS"],
+    "demo": "",
+    "source": "https://github.com/Entrils/tournaments-brackets"
+  },
+  {
+    "title": "Production Project",
+    "imageSrc": "projects/pp.png",
+    "description": "Крупный проект из курса «Продвинутый фронтенд»: TypeScript, React, ручная настройка Webpack, unit-тесты и Storybook.",
+    "skills": ["React", "TypeScript", "SCSS", "Jest", "Redux", "Storybook"],
+    "demo": "https://entrils-prod-app.netlify.app",
+    "source": "https://github.com/Entrils/production-project"
+  },
+  {
+    "title": "Designer Portfolio",
+    "imageSrc": "projects/semary.png",
+    "description": "Одностраничный сайт-портфолио дизайнера по макету Figma. Фокус на аккуратной верстке и адаптиве.",
+    "skills": ["React", "HTML", "CSS"],
+    "demo": "https://semary.netlify.app/",
+    "source": "https://github.com/Entrils/DesignerPortfolio"
+  },
+  {
+    "title": "To-Do List",
+    "imageSrc": "projects/todolist.png",
+    "description": "Менеджер задач с добавлением, редактированием, фильтрацией и сохранением состояния в localStorage.",
+    "skills": ["React", "HTML", "CSS"],
+    "demo": "https://entrils-todo-list.netlify.app/",
+    "source": "https://github.com/Entrils/entrils-todo-list"
+  },
+  {
+    "title": "Idle Village",
+    "imageSrc": "projects/idle-village.png",
+    "description": "Инкрементальная игра на React + TypeScript + Redux. Реализованы кастомные хуки, система достижений, уведомления и сохранение прогресса.",
+    "skills": ["React", "TypeScript", "Redux", "CSS"],
+    "demo": "https://entrils-idle-village.netlify.app/",
+    "source": "https://github.com/Entrils/idle-village"
+  },
+  {
+    "title": "Stats Tracker",
+    "imageSrc": "projects/stats-tracker.png",
+    "description": "Data-heavy проект со статистикой игроков: OCR, визуализация данных, React/Vite, Firebase Auth + Firestore и Node.js/Express API.",
+    "skills": ["React", "JavaScript", "OCR", "CSS", "Firebase", "Node.js"],
+    "demo": "https://fragpunktracker.fun/players",
+    "source": "https://github.com/Entrils/StatsTracker"
+  }
 ]

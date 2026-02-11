@@ -1,4 +1,4 @@
-@import "../../vars.css";
+﻿@import "../../vars.css";
 
 .navbar {
   position: fixed;
@@ -11,18 +11,18 @@
   padding: 20px 10%;
   margin: 0;
   z-index: 1000;
-  background: rgba(15, 15, 35, 0.8);
+  background: rgba(12, 16, 24, 0.78);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
 }
 
 .title {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   text-decoration: none;
   color: var(--color-text);
-  letter-spacing: 1px;
+  letter-spacing: 0.01em;
   transition: color 0.3s ease;
 }
 
@@ -37,16 +37,16 @@
 
 .menuItems {
   display: flex;
-  gap: 36px;
+  gap: 32px;
   list-style: none;
 }
 
 .menuItems a {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--color-text);
   text-decoration: none;
   position: relative;
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
 .menuItems a::after {
@@ -57,14 +57,15 @@
   width: 0%;
   height: 2px;
   background: var(--color-primary);
-  transition: width 0.3s ease;
+  transition: width 0.25s ease;
 }
 
 .menuItems a:hover {
   color: var(--color-primary);
 }
 
-.menuItems a:hover::after {
+.menuItems a:hover::after,
+.menuItems a.active::after {
   width: 100%;
 }
 
@@ -72,23 +73,19 @@
   color: var(--color-primary);
 }
 
-.menuItems a.active::after {
-  width: 100%;
-}
-
 .show {
   transform: translateY(0);
   opacity: 1;
 }
+
 .hide {
   transform: translateY(-100%);
   opacity: 0;
 }
 
 .scrolled {
-  padding: 10px 10%;
-  background: rgba(15, 15, 35, 0.95);
-  backdrop-filter: blur(12px);
+  padding: 12px 10%;
+  background: rgba(12, 16, 24, 0.92);
 }
 
 .menuBtn {
@@ -100,26 +97,26 @@
 }
 
 .menuBtn:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
+
 .progressBar {
   position: fixed;
   top: 0;
   left: 0;
   height: 2px;
-  background: var(--color-primary);
   z-index: 2000;
 }
 
 .progressBar.gradient {
-  background: linear-gradient(90deg, #00f5ff, #0080ff, #a020f0);
+  background: linear-gradient(90deg, #9ad8ff, #c8f560);
 }
 
 @media screen and (max-width: 1200px) {
   .progressBar {
     display: none;
   }
-  
+
   .menuBtn {
     display: block;
   }
@@ -131,12 +128,12 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 18px;
-    background: rgba(25, 25, 80, 0.95);
+    background: rgba(19, 24, 35, 0.96);
     backdrop-filter: blur(10px);
-    padding: 24px 28px;
+    padding: 22px 26px;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -145,39 +142,12 @@
   }
 
   .menuOpen {
-    max-height: 400px;
+    max-height: 380px;
     opacity: 1;
     transform: translateY(0);
-  }
-
-  .menuItems li {
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-  }
-
-  .menuOpen li {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .menuOpen li:nth-child(1) {
-    transition-delay: 0.05s;
-  }
-  .menuOpen li:nth-child(2) {
-    transition-delay: 0.1s;
-  }
-  .menuOpen li:nth-child(3) {
-    transition-delay: 0.15s;
-  }
-  .menuOpen li:nth-child(4) {
-    transition-delay: 0.2s;
-  }
-  .menuOpen li:nth-child(5) {
-    transition-delay: 0.25s;
   }
 
   .menuItems a {
-    font-size: 20px;
+    font-size: 18px;
   }
 }

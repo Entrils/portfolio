@@ -1,4 +1,4 @@
-import skills from "../../data/skills.json";
+﻿import skills from "../../data/skills.json";
 import styles from "./Skills.module.css";
 import { getImageUrl } from "../../utils";
 import { motion } from "framer-motion";
@@ -13,25 +13,25 @@ export const Skills = () => {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        Навыки
-      <motion.span
-        className={styles.underline}
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-      />
+        Стек и инструменты
+        <motion.span
+          className={styles.underline}
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        />
       </motion.h2>
 
       <div className={styles.skillsGrid}>
-        {skills.map((skill, id) => (
+        {skills.map((skill, index) => (
           <motion.div
-            key={id}
+            key={skill.title}
             className={styles.skillCard}
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: id * 0.05 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.05 }}
           >
             <div className={styles.skillImageContainer}>
               <img src={getImageUrl(skill.imageSrc)} alt={skill.title} />

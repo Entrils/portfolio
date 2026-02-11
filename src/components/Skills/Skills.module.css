@@ -1,4 +1,4 @@
-@import "../../vars.css";
+﻿@import "../../vars.css";
 
 .container {
   color: var(--color-text);
@@ -22,7 +22,7 @@
   bottom: -8px;
   height: 3px;
   width: 100%;
-  background: linear-gradient(90deg, var(--color-primary), #6ea8fe);
+  background: linear-gradient(90deg, var(--color-primary), #96ccff);
   border-radius: 2px;
   transform-origin: left;
 }
@@ -30,7 +30,7 @@
 .skillsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 40px;
+  gap: 30px;
   justify-items: center;
 }
 
@@ -38,19 +38,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 18px;
   width: 120px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, border-color 0.25s ease;
   cursor: default;
 }
 
-
 .skillCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(100, 150, 255, 0.35);
+  transform: translateY(-6px);
+  border-color: rgba(200, 245, 96, 0.42);
 }
 
 .skillImageContainer {
@@ -61,12 +60,6 @@
   justify-content: center;
   width: 70px;
   height: 70px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skillCard:hover .skillImageContainer {
-  transform: rotate(8deg) scale(1.1);
-  box-shadow: 0 0 15px rgba(110,168,254,0.6);
 }
 
 .skillImageContainer img {
@@ -76,16 +69,15 @@
 
 .skillName {
   margin-top: 12px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-text);
   font-family: var(--font-inter);
   user-select: none;
 }
 
-
 @media screen and (max-width: 830px) {
   .skillsGrid {
-    gap: 25px;
+    gap: 22px;
   }
 }

@@ -8,3 +8,14 @@
 html{
   scroll-behavior: smooth;
 }
+
+section,
+footer {
+  scroll-margin-top: 90px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

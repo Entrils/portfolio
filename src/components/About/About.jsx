@@ -1,35 +1,10 @@
-import { useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Typed from "typed.js";
+﻿import { motion, useScroll, useTransform } from "framer-motion";
 import styles from "./About.module.css";
 import { getImageUrl } from "../../utils";
 
 export const About = () => {
-  const typedRef = useRef(null);
-
   const { scrollY } = useScroll();
   const yParallax = useTransform(scrollY, [0, 800], [0, 50]);
-
-  useEffect(() => {
-    const typed = new Typed(typedRef.current, {
-      strings: ["Привет, я Андрей!"],
-      typeSpeed: 70,
-      startDelay: 300,
-      loop: false,
-      showCursor: true,
-      cursorChar: "|",
-      onComplete: (self) => {
-        const cursor = self.cursor;
-        if (cursor) {
-          cursor.style.display = "none";
-        }
-      }
-    });
-
-    return () => {
-      typed.destroy();
-    };
-  }, []);
 
   return (
     <section className={styles.container} id="about">
@@ -41,7 +16,7 @@ export const About = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span ref={typedRef}></span>
+          Андрей, frontend-разработчик
         </motion.h1>
 
         <motion.p
@@ -51,17 +26,18 @@ export const About = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
         >
-          Я <span className={styles.descriptionHighlited}>front-end</span> разработчик. 
-          Использую <span className={styles.descriptionHighlited}>React</span>, 
-          <span className={styles.descriptionHighlited}> TypeScript</span> и 
-          <span className={styles.descriptionHighlited}> JavaScript</span>. 
-          Ниже вы найдёте больше информации обо мне!
+          Пишу интерфейсы, которые не только выглядят аккуратно, но и
+          выдерживают реальную нагрузку: состояние, формы, API, ошибки,
+          адаптив. Основной стек: <span className={styles.descriptionHighlited}>React</span>,
+          <span className={styles.descriptionHighlited}> TypeScript</span> и
+          <span className={styles.descriptionHighlited}> JavaScript</span>. Ниже
+          собрал проекты, где это можно проверить вживую.
         </motion.p>
 
         <div className={styles.buttonsRow}>
-          <motion.a 
-            href="https://t.me/entrils" 
-            target="_blank" 
+          <motion.a
+            href="https://t.me/entrils"
+            target="_blank"
             rel="noopener noreferrer"
             className={styles.contactBtn}
             initial={{ opacity: 0, scale: 0.9 }}
@@ -69,10 +45,10 @@ export const About = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.8 }}
           >
-            🚀 Связаться со мной
+            Написать в Telegram
           </motion.a>
 
-          <motion.a 
+          <motion.a
             href="/CV.pdf"
             download="Andrey-CV.pdf"
             className={`${styles.contactBtn} ${styles.cvBtn}`}
@@ -81,14 +57,14 @@ export const About = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 1 }}
           >
-            📄 Скачать CV
+            Скачать резюме
           </motion.a>
         </div>
       </div>
 
       <motion.img
         src={getImageUrl("about/aboutPhoto.png")}
-        alt="Моё фото"
+        alt="Фото Андрея"
         className={styles.aboutPhoto}
         style={{ y: yParallax }}
         initial={{ opacity: 0, x: 50 }}
