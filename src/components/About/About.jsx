@@ -49,7 +49,7 @@ export const About = () => {
           </motion.a>
 
           <motion.a
-            href="/CV.pdf"
+            href="/Andrew-CV.pdf"
             download="Andrey-CV.pdf"
             className={`${styles.contactBtn} ${styles.cvBtn}`}
             initial={{ opacity: 0, scale: 0.9 }}

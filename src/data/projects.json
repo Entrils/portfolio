@@ -36,7 +36,7 @@
     "imageSrc": "projects/tournaments.png",
     "description": "Инструмент для создания турнирных таблиц для личного использования. Основной фокус: UX редактирования и управление состоянием.",
     "skills": ["React", "Redux", "CSS"],
-    "demo": "",
+    "demo": "https://entrilstourneyapp.netlify.app/",
     "source": "https://github.com/Entrils/tournaments-brackets"
   },
   {
