@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <script>
+      (function () {
+        var target =
+          "/" +
+          (window.location.pathname || "").replace(/^\/+/, "") +
+          (window.location.search || "") +
+          (window.location.hash || "");
+        window.location.replace("/#" + target);
+      })();
+    </script>
+  </body>
+</html>

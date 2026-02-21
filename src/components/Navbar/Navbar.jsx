@@ -11,6 +11,7 @@ export const Navbar = () => {
 
   const targetProgress = useRef(0);
   const animationFrame = useRef(null);
+  const menuRef = useRef(null);
 
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
@@ -46,6 +47,20 @@ export const Navbar = () => {
       });
     };
 
+    const updateScrollProgress = () => {
+      const totalHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      if (totalHeight <= 0) {
+        targetProgress.current = 0;
+      } else {
+        const rawProgress = (window.scrollY / totalHeight) * 100;
+        targetProgress.current = Math.min(100, Math.max(0, rawProgress));
+      }
+
+      cancelAnimationFrame(animationFrame.current);
+      animationFrame.current = requestAnimationFrame(animateProgress);
+    };
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setScrolled(currentScrollY > 50);
@@ -57,21 +72,55 @@ export const Navbar = () => {
       }
 
       lastScrollY = currentScrollY;
-
-      const totalHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      targetProgress.current = (window.scrollY / totalHeight) * 100;
-
-      cancelAnimationFrame(animationFrame.current);
-      animationFrame.current = requestAnimationFrame(animateProgress);
+      updateScrollProgress();
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const handleResize = () => {
+      setScrolled(window.scrollY > 50);
+      if (window.innerWidth > 1200) {
+        setShowNavbar(true);
+      }
+      lastScrollY = window.scrollY;
+      updateScrollProgress();
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize);
+    handleResize();
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationFrame.current);
     };
   }, []);
+
+  useEffect(() => {
+    if (!menuOpen) {
+      return;
+    }
+
+    const handleOutsidePointer = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsidePointer);
+    document.addEventListener("touchstart", handleOutsidePointer);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsidePointer);
+      document.removeEventListener("touchstart", handleOutsidePointer);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [menuOpen]);
 
   return (
     <>
@@ -80,23 +129,33 @@ export const Navbar = () => {
           showNavbar ? styles.show : styles.hide
         }`}
       >
-        <a className={styles.title} href="/">
+        <a className={styles.title} href="#about">
           Андрей Савельев
         </a>
 
-        <div className={styles.menu}>
-          <img
+        <div className={styles.menu} ref={menuRef}>
+          <button
+            type="button"
             className={styles.menuBtn}
-            src={
-              menuOpen
-                ? getImageUrl("navbar/closeIcon.png")
-                : getImageUrl("navbar/menuIcon.png")
-            }
-            alt="Кнопка меню"
+            aria-expanded={menuOpen}
+            aria-controls="main-navigation"
+            aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
             onClick={() => setMenuOpen(!menuOpen)}
-          />
+          >
+            <img
+              src={
+                menuOpen
+                  ? getImageUrl("navbar/closeIcon.png")
+                  : getImageUrl("navbar/menuIcon.png")
+              }
+              alt=""
+              aria-hidden="true"
+              className={styles.menuBtnIcon}
+            />
+          </button>
 
           <ul
+            id="main-navigation"
             className={`${styles.menuItems} ${
               menuOpen ? styles.menuOpen : ""
             }`}

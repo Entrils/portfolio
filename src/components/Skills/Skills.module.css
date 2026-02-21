@@ -42,7 +42,8 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
   padding: 18px;
-  width: 120px;
+  width: 100%;
+  max-width: 160px;
   transition: transform 0.25s ease, border-color 0.25s ease;
   cursor: default;
 }

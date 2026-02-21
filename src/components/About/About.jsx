@@ -1,10 +1,17 @@
-﻿import { motion, useScroll, useTransform } from "framer-motion";
+﻿import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import styles from "./About.module.css";
 import { getImageUrl } from "../../utils";
+import profile from "../../data/profile.json";
 
 export const About = () => {
+  const prefersReducedMotion = useReducedMotion();
   const { scrollY } = useScroll();
   const yParallax = useTransform(scrollY, [0, 800], [0, 50]);
+  const photoY = prefersReducedMotion ? 0 : yParallax;
+
+  const headingTransition = prefersReducedMotion
+    ? { duration: 0 }
+    : { duration: 0.6, ease: "easeOut" };
 
   return (
     <section className={styles.container} id="about">
@@ -14,7 +21,7 @@ export const About = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={headingTransition}
         >
           Андрей, frontend-разработчик
         </motion.h1>
@@ -24,7 +31,11 @@ export const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+          transition={
+            prefersReducedMotion
+              ? { duration: 0 }
+              : { duration: 0.6, ease: "easeOut", delay: 0.4 }
+          }
         >
           Пишу интерфейсы, которые не только выглядят аккуратно, но и
           выдерживают реальную нагрузку: состояние, формы, API, ошибки,
@@ -36,26 +47,34 @@ export const About = () => {
 
         <div className={styles.buttonsRow}>
           <motion.a
-            href="https://t.me/entrils"
+            href={profile.telegramUrl}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.contactBtn}
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.8 }}
+            transition={
+              prefersReducedMotion
+                ? { duration: 0 }
+                : { duration: 0.5, ease: "easeOut", delay: 0.8 }
+            }
           >
             Написать в Telegram
           </motion.a>
 
           <motion.a
-            href="/Andrew-CV.pdf"
-            download="Andrey-CV.pdf"
+            href={profile.resumeUrl}
+            download={profile.resumeDownloadName}
             className={`${styles.contactBtn} ${styles.cvBtn}`}
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 1 }}
+            transition={
+              prefersReducedMotion
+                ? { duration: 0 }
+                : { duration: 0.5, ease: "easeOut", delay: 1 }
+            }
           >
             Скачать резюме
           </motion.a>
@@ -66,11 +85,15 @@ export const About = () => {
         src={getImageUrl("about/aboutPhoto.png")}
         alt="Фото Андрея"
         className={styles.aboutPhoto}
-        style={{ y: yParallax }}
+        style={{ y: photoY }}
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+        transition={
+          prefersReducedMotion
+            ? { duration: 0 }
+            : { duration: 0.8, ease: "easeOut", delay: 0.6 }
+        }
       />
     </section>
   );

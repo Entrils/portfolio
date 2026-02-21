@@ -43,18 +43,47 @@
   align-items: center;
 }
 
+.carouselWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(900px, 60vw);
+  gap: 14px;
+}
+
 .carousel {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: min(900px, 60vw);
+  width: 100%;
   height: 540px;
   overflow: hidden;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+.slideDescription {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.55;
+  text-align: left;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.slideStatus {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  line-height: 1.3;
+  align-self: flex-end;
 }
 
 .LeftArrow,
@@ -128,7 +157,6 @@
   width: 10px;
   border-radius: 50%;
   border: none;
-  outline: none;
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
@@ -142,9 +170,25 @@
   background: rgba(190, 197, 210, 0.7);
 }
 
+.indicatorBtn:focus-visible,
+.indicatorBtnInactive:focus-visible,
+.LeftArrow:focus-visible,
+.RightArrow:focus-visible,
+.carousel:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.carousel:focus-visible {
+  box-shadow: 0 0 0 4px rgba(200, 245, 96, 0.25);
+}
+
 @media screen and (max-width: 768px) {
-  .carousel {
+  .carouselWrapper {
     width: 90vw;
+  }
+
+  .carousel {
     aspect-ratio: 3 / 4;
     height: auto;
   }
@@ -158,9 +202,17 @@
 }
 
 @media screen and (max-width: 480px) {
-  .carousel {
+  .carouselWrapper {
     width: 100%;
+  }
+
+  .carousel {
     aspect-ratio: 3 / 5;
+  }
+
+  .slideDescription {
+    font-size: 13px;
+    padding: 8px 10px;
   }
 }
 

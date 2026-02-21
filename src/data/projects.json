@@ -78,5 +78,13 @@
     "skills": ["React", "JavaScript", "OCR", "CSS", "Firebase", "Node.js"],
     "demo": "https://fragpunktracker.fun/players",
     "source": "https://github.com/Entrils/StatsTracker"
+  },
+    {
+    "title": "Редактор параметров",
+    "imageSrc": "projects/parEdit.png",
+    "description": "Тестовое задание, задача которого сделать расширяемый редактор параметров react + typescript + Jest  + RTL tests",
+    "skills": ["React", "TypeScript", "Jest", "RTL"],
+    "demo": "https://parametredit.netlify.app/",
+    "source": "https://github.com/Entrils/testJob"
   }
 ]

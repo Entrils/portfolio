@@ -67,19 +67,17 @@ export const CertificateSlider = ({ data }) => {
     return () => clearInterval(intervalRef.current);
   }, [isPaused, slide, nextSlide]);
 
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === "ArrowLeft") {
-        prevSlide();
-      }
-      if (event.key === "ArrowRight") {
-        nextSlide();
-      }
-    };
+  const handleKeyDown = (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      prevSlide();
+    }
 
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [nextSlide, prevSlide]);
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      nextSlide();
+    }
+  };
 
   const handleTouchStart = (event) => {
     touchStartX.current = event.touches[0].clientX;
@@ -105,60 +103,74 @@ export const CertificateSlider = ({ data }) => {
     touchEndX.current = 0;
   };
 
+  const activeCertificate = data[slide];
+
   return (
-    <div
-      className={styles.carousel}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-      aria-label="Слайдер сертификатов"
-    >
-      <button
-        type="button"
-        className={styles.LeftArrow}
-        onClick={prevSlide}
-        aria-label="Предыдущий сертификат"
+    <div className={styles.carouselWrapper}>
+      <div
+        className={styles.carousel}
+        role="region"
+        aria-roledescription="carousel"
+        tabIndex={0}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onKeyDown={handleKeyDown}
+        aria-label="Слайдер сертификатов"
       >
-        <FaChevronLeft />
-      </button>
+        <button
+          type="button"
+          className={styles.LeftArrow}
+          onClick={prevSlide}
+          aria-label="Предыдущий сертификат"
+        >
+          <FaChevronLeft />
+        </button>
 
-      {data.map((item, index) =>
-        loadedSlides.has(index) ? (
-          <img
-            src={getImageUrl(item.imageSrc)}
-            alt={item.title}
-            key={item.imageSrc}
-            loading={index === 0 ? "eager" : "lazy"}
-            fetchPriority={index === 0 ? "high" : "auto"}
-            decoding="async"
-            className={slide === index ? styles.slide : styles.slideHdn}
-          />
-        ) : null
-      )}
+        {data.map((item, index) =>
+          loadedSlides.has(index) ? (
+            <img
+              src={getImageUrl(item.imageSrc)}
+              alt={item.title}
+              key={item.imageSrc}
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
+              className={slide === index ? styles.slide : styles.slideHdn}
+            />
+          ) : null
+        )}
 
-      <button
-        type="button"
-        className={styles.RightArrow}
-        onClick={nextSlide}
-        aria-label="Следующий сертификат"
-      >
-        <FaChevronRight />
-      </button>
+        <button
+          type="button"
+          className={styles.RightArrow}
+          onClick={nextSlide}
+          aria-label="Следующий сертификат"
+        >
+          <FaChevronRight />
+        </button>
 
-      <span className={styles.indicators} aria-live="polite">
-        {data.map((item, index) => (
-          <button
-            key={`dot-${item.imageSrc}`}
-            onClick={() => goToSlide(index)}
-            className={
-              slide === index ? styles.indicatorBtn : styles.indicatorBtnInactive
-            }
-            aria-label={`Перейти к сертификату ${index + 1}`}
-          ></button>
-        ))}
-      </span>
+        <span className={styles.indicators}>
+          {data.map((item, index) => (
+            <button
+              key={`dot-${item.imageSrc}`}
+              onClick={() => goToSlide(index)}
+              className={
+                slide === index ? styles.indicatorBtn : styles.indicatorBtnInactive
+              }
+              aria-label={`Перейти к сертификату ${index + 1}`}
+            ></button>
+          ))}
+        </span>
+      </div>
+
+      <p className={styles.slideDescription} aria-live="polite">
+        {activeCertificate?.description}
+      </p>
+      <p className={styles.slideStatus} aria-live="polite">
+        Слайд {slide + 1} из {data.length}
+      </p>
     </div>
   );
 };

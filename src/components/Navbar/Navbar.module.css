@@ -91,13 +91,30 @@
 .menuBtn {
   display: none;
   cursor: pointer;
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  padding: 0;
   transition: transform 0.2s ease;
 }
 
 .menuBtn:hover {
   transform: scale(1.08);
+}
+
+.menuBtnIcon {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.title:focus-visible,
+.menuItems a:focus-visible,
+.menuBtn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 8px;
 }
 
 .progressBar {

@@ -1,6 +1,7 @@
 ﻿import { useEffect, useRef, useState } from "react";
 import { getImageUrl } from "../../utils";
 import styles from "./Contact.module.css";
+import profile from "../../data/profile.json";
 
 export const Contact = () => {
   const sectionRef = useRef(null);
@@ -48,7 +49,7 @@ export const Contact = () => {
                 className={styles.icon}
               />
             </div>
-            <a href="mailto:needway@list.ru">needway@list.ru</a>
+            <a href={`mailto:${profile.email}`}>{profile.email}</a>
           </li>
 
           <li className={`${styles.linkCard} ${isVisible ? styles.fadeIn3 : ""}`}>
@@ -59,8 +60,8 @@ export const Contact = () => {
                 className={styles.icon}
               />
             </div>
-            <a href="https://t.me/entrils" target="_blank" rel="noreferrer">
-              @entrils
+            <a href={profile.telegramUrl} target="_blank" rel="noreferrer">
+              {profile.telegramLabel}
             </a>
           </li>
 
@@ -72,8 +73,8 @@ export const Contact = () => {
                 className={styles.icon}
               />
             </div>
-            <a href="https://github.com/Entrils" target="_blank" rel="noreferrer">
-              github.com/Entrils
+            <a href={profile.githubUrl} target="_blank" rel="noreferrer">
+              {profile.githubLabel}
             </a>
           </li>
         </ul>

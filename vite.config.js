@@ -8,5 +8,10 @@ export default defineConfig({
     modules: {
       localsConvention: "camelCase",
     },
-  }
+  },
+  test: {
+    environment: "jsdom",
+    setupFiles: "./src/test/setup.js",
+    css: true,
+  },
 })
