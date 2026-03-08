@@ -79,12 +79,28 @@
     "demo": "https://fragpunktracker.fun/players",
     "source": "https://github.com/Entrils/StatsTracker"
   },
-    {
+  {
     "title": "Редактор параметров",
     "imageSrc": "projects/parEdit.png",
     "description": "Тестовое задание, задача которого сделать расширяемый редактор параметров react + typescript + Jest  + RTL tests",
     "skills": ["React", "TypeScript", "Jest", "RTL"],
     "demo": "https://parametredit.netlify.app/",
     "source": "https://github.com/Entrils/testJob"
+  },
+  {
+    "title": "Каталог кухонь",
+    "imageSrc": "projects/sepium.png",
+    "description": "Тестовое задание, задача которого сделать pixel perfect SPA по макету Figma на ванильном JS. Реализованы свайперы, модальное окно зума, переключение состояний",
+    "skills": ["JavaScript", "Figma", "CSS"],
+    "demo": "https://sepium-test-task.netlify.app/",
+    "source": "https://github.com/Entrils/testJob_sepium"
+  },
+  {
+    "title": "Тарифы фитнеса",
+    "imageSrc": "projects/test4a.png",
+    "description": "Тестовое задание, задача которого реализовать pixel-perfect по макету Figma + адаптив. Выборы тарифа, таймер офера, проверка согласия и анимации.",
+    "skills": ["React", "Next,js", "Tailwind", "RTK Query"],
+    "demo": "https://testtask4a.netlify.app/",
+    "source": "https://github.com/Entrils/testJob_4A"
   }
 ]
