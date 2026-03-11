@@ -14,27 +14,37 @@ export const Navbar = () => {
   const menuRef = useRef(null);
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
-    };
-  }, []);
-
-  useEffect(() => {
     let lastScrollY = window.scrollY;
+    const sectionOrder = ["about", "skills", "certificates", "projects", "contact"];
+
+    const getCurrentSection = () => {
+      const sections = sectionOrder
+        .map((id) => document.getElementById(id))
+        .filter(Boolean);
+
+      if (!sections.length) {
+        return "";
+      }
+
+      const triggerLine = Math.max(120, Math.min(window.innerHeight * 0.34, 280));
+      let currentSection = sections[0].id;
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= triggerLine) {
+          currentSection = section.id;
+        }
+      });
+
+      const isBottomReached =
+        window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+
+      if (isBottomReached) {
+        currentSection = sections[sections.length - 1].id;
+      }
+
+      return currentSection;
+    };
 
     const animateProgress = () => {
       setScrollProgress((prev) => {
@@ -64,6 +74,7 @@ export const Navbar = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setScrolled(currentScrollY > 50);
+      setActiveSection(getCurrentSection());
 
       if (window.innerWidth <= 1200) {
         setShowNavbar(currentScrollY <= lastScrollY);
@@ -77,6 +88,7 @@ export const Navbar = () => {
 
     const handleResize = () => {
       setScrolled(window.scrollY > 50);
+      setActiveSection(getCurrentSection());
       if (window.innerWidth > 1200) {
         setShowNavbar(true);
       }

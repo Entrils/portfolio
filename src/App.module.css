@@ -1,11 +1,75 @@
-﻿@import "./vars.css";
+@import "./vars.css";
 
 .App {
   min-height: 100vh;
+  position: relative;
+  isolation: isolate;
   background:
-    radial-gradient(circle at 85% 12%, rgba(200, 245, 96, 0.09), transparent 25%),
-    radial-gradient(circle at 12% 24%, rgba(89, 111, 255, 0.12), transparent 30%),
+    radial-gradient(circle at 85% 12%, rgba(200, 245, 96, 0.12), transparent 28%),
+    radial-gradient(circle at 12% 24%, rgba(89, 111, 255, 0.16), transparent 36%),
+    radial-gradient(circle at 40% 70%, rgba(87, 173, 255, 0.08), transparent 34%),
     linear-gradient(180deg, #090d15 0%, #0d111a 55%, #0a0f17 100%);
   width: 100%;
   overflow: hidden;
+}
+
+.ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambientLayer {
+  position: absolute;
+  will-change: transform;
+}
+
+.layerOne {
+  top: -18%;
+  left: -12%;
+  width: 72vw;
+  height: 72vw;
+  background:
+    radial-gradient(circle at center, rgba(112, 185, 255, 0.12), transparent 65%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(130, 176, 226, 0.08) 0 1px,
+      transparent 1px 20px
+    );
+  opacity: 0.42;
+  filter: blur(2px);
+}
+
+.layerTwo {
+  right: -26%;
+  top: 28%;
+  width: 66vw;
+  height: 56vw;
+  transform: rotate(-14deg);
+  background: linear-gradient(
+    90deg,
+    rgba(200, 245, 96, 0.02),
+    rgba(200, 245, 96, 0.2),
+    rgba(70, 148, 228, 0.22),
+    rgba(70, 148, 228, 0.02)
+  );
+  opacity: 0.36;
+  filter: blur(14px);
+}
+
+.layerThree {
+  inset: 0;
+  background: repeating-linear-gradient(
+    -24deg,
+    rgba(255, 255, 255, 0.02) 0 1px,
+    transparent 1px 18px
+  );
+  opacity: 0.32;
+}
+
+@media (max-width: 980px) {
+  .ambient {
+    display: none;
+  }
 }

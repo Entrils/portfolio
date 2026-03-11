@@ -15,26 +15,40 @@ vi.mock("framer-motion", () => {
           delete rest.whileInView;
           delete rest.transition;
           delete rest.viewport;
+          delete rest.animate;
+          delete rest.exit;
+          delete rest.variants;
+          delete rest.custom;
+          delete rest.drag;
+          delete rest.dragConstraints;
+          delete rest.dragElastic;
+          delete rest.dragSnapToOrigin;
+          delete rest.whileDrag;
+          delete rest.onDragEnd;
           return React.createElement(tag, { ...rest, ref }, props.children);
         }),
     }
   );
 
-  return { motion };
+  return {
+    motion,
+    AnimatePresence: ({ children }) => <>{children}</>,
+  };
 });
 
 import { Projects } from "./Projects";
 
 describe("Projects", () => {
-  it("renders projects list from data", () => {
+  it("renders carousel with project content", () => {
     render(<Projects />);
 
     expect(
-      screen.getByRole("heading", { name: "Избранные проекты" })
+      screen.getByRole("heading", { name: /избранные проекты/i })
     ).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: /карусель проектов/i })).toBeInTheDocument();
     expect(
-      screen.getAllByRole("link", { name: "Код на GitHub" })
-    ).toHaveLength(projects.length);
+      screen.getAllByRole("link", { name: /код на github/i }).length
+    ).toBeGreaterThan(0);
     expect(screen.getByText(projects[0].title)).toBeInTheDocument();
   });
 });

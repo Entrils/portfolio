@@ -3,20 +3,26 @@ import { getImageUrl } from "../../utils";
 import styles from "./ProjectCard.module.css";
 
 export const ProjectCard = ({
-  project: { title, imageSrc, description, skills, demo, source }
+  project: { title, imageSrc, description, skills, demo, source },
+  shouldLoadImage = true,
 }) => {
   const hasDemo = Boolean(demo);
+  const imageUrl = shouldLoadImage ? getImageUrl(imageSrc) : "";
 
   return (
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
-        <img
-          src={getImageUrl(imageSrc)}
-          alt={`Скриншот проекта ${title}`}
-          loading="lazy"
-          decoding="async"
-          className={styles.image}
-        />
+        {shouldLoadImage ? (
+          <img
+            src={imageUrl}
+            alt={`Скриншот проекта ${title}`}
+            loading="lazy"
+            decoding="async"
+            className={styles.image}
+          />
+        ) : (
+          <div className={styles.imageSkeleton} aria-hidden="true"></div>
+        )}
       </div>
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>

@@ -1,13 +1,81 @@
-﻿@import "../../vars.css";
+@import "../../vars.css";
 
 .container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 110px 10% 0;
-  gap: 48px;
+  margin: 124px 10% 0;
+  padding: 44px clamp(20px, 3vw, 34px);
+  gap: 56px;
   z-index: 1;
+  overflow: hidden;
+  border-radius: 26px;
+  border: 1px solid rgba(95, 126, 160, 0.38);
+  background:
+    linear-gradient(140deg, rgba(9, 14, 23, 0.95), rgba(8, 12, 20, 0.84)),
+    linear-gradient(0deg, rgba(200, 245, 96, 0.05), rgba(200, 245, 96, 0.05));
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+    0 24px 46px rgba(0, 0, 0, 0.34);
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(200, 245, 96, 0.08), transparent 45%);
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.circuitMesh {
+  position: absolute;
+  inset: 8% 4%;
+  border-radius: 18px;
+  opacity: 0.7;
+  border: 1px solid rgba(111, 151, 194, 0.2);
+  background:
+    linear-gradient(rgba(136, 183, 233, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(136, 183, 233, 0.09) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 1) 15% 85%, transparent);
+}
+
+.dataBeam {
+  position: absolute;
+  right: -20%;
+  top: 6%;
+  width: 78%;
+  height: 160%;
+  transform: rotate(-16deg);
+  opacity: 0.42;
+  background: linear-gradient(
+    90deg,
+    rgba(200, 245, 96, 0.02),
+    rgba(200, 245, 96, 0.22),
+    rgba(102, 181, 255, 0.2),
+    rgba(102, 181, 255, 0.02)
+  );
+  filter: blur(10px);
+}
+
+.scanLayer {
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06) 0 1px,
+    transparent 1px 4px
+  );
 }
 
 .content {
@@ -15,23 +83,38 @@
   flex-direction: column;
   align-items: flex-start;
   color: var(--color-text);
-  max-width: 600px;
+  max-width: 620px;
+  position: relative;
+  z-index: 2;
 }
 
 .title {
-  font-size: clamp(36px, 5vw, 56px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 24px;
+  line-height: 0.98;
+}
+
+.titleWord {
+  font-size: clamp(40px, 7.2vw, 82px);
   font-weight: 800;
-  margin-bottom: 20px;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   font-family: var(--font-inter);
+  color: var(--color-text);
+  text-wrap: balance;
+}
+
+.titleWord:nth-child(2) {
+  color: #c8f560;
 }
 
 .description {
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.75;
   margin-bottom: 38px;
   color: var(--color-text-muted);
+  max-width: 560px;
 }
 
 .descriptionHighlited {
@@ -51,9 +134,11 @@
   border: 1px solid transparent;
   border-radius: 999px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   padding: 12px 22px;
   transition: transform 0.2s ease, border-color 0.25s ease, background-color 0.25s ease;
+  will-change: transform;
 }
 
 .contactBtn:hover {
@@ -66,36 +151,124 @@
 }
 
 .cvBtn {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.02);
   color: var(--color-text);
-  border-color: rgba(255, 255, 255, 0.28);
+  border-color: rgba(156, 180, 204, 0.48);
 }
 
 .cvBtn:hover {
-  border-color: rgba(255, 255, 255, 0.65);
+  border-color: rgba(201, 226, 255, 0.74);
+}
+
+.photoWrap {
+  position: relative;
+  z-index: 2;
+  width: min(420px, 38vw);
+  min-width: 270px;
 }
 
 .aboutPhoto {
-  width: 320px;
-  max-width: 40%;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.33);
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(126, 165, 211, 0.48);
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.4);
+  transform-origin: center;
+}
+
+.codePanel {
+  position: absolute;
+  left: -28px;
+  bottom: -26px;
+  width: min(380px, 90%);
+  border-radius: 14px;
+  padding: 14px;
+  background: rgba(6, 10, 16, 0.92);
+  border: 1px solid rgba(126, 165, 211, 0.44);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+}
+
+.codeHeader {
+  font-family: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
+  color: #b9ccdf;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.codeBlock {
+  margin: 0;
+  color: #dbeaff;
+  font-size: 12px;
+  line-height: 1.6;
+  font-family: "JetBrains Mono", "Fira Code", Consolas, "Courier New", monospace;
+  white-space: pre-wrap;
+}
+
+@media screen and (max-width: 1120px) {
+  .container {
+    gap: 34px;
+  }
+
+  .codePanel {
+    left: 8px;
+  }
 }
 
 @media screen and (max-width: 1030px) {
   .container {
     flex-direction: column-reverse;
     text-align: center;
-    margin: 72px 5% 0;
+    margin: 84px 5% 0;
+    gap: 32px;
+    padding: 30px 22px;
   }
 
   .content {
     align-items: center;
   }
 
-  .aboutPhoto {
-    max-width: 72%;
-    margin-bottom: 28px;
+  .title {
+    align-items: center;
+  }
+
+  .description {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .photoWrap {
+    width: min(440px, 86vw);
+    min-width: 0;
+  }
+
+  .codePanel {
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(380px, 94%);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    border-radius: 20px;
+  }
+
+  .circuitMesh {
+    inset: 8%;
+    background-size: 22px 22px;
+  }
+
+  .titleWord {
+    font-size: clamp(34px, 12vw, 56px);
+  }
+
+  .codePanel {
+    bottom: -20px;
+    padding: 12px;
+  }
+
+  .codeBlock {
+    font-size: 11px;
   }
 }

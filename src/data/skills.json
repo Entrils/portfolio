@@ -1,66 +1,70 @@
 [
     {
         "title": "HTML",
-        "imageSrc": "skills/html.png"
+        "imageSrc": "skills/html.webp"
     },
     {
         "title": "CSS",
-        "imageSrc": "skills/css.png"
+        "imageSrc": "skills/css.webp"
     },
     {
         "title": "React",
-        "imageSrc": "skills/react.png"
+        "imageSrc": "skills/react.webp"
     },
     {
         "title": "Node",
-        "imageSrc": "skills/node.png"
+        "imageSrc": "skills/node.webp"
     },
     {
         "title": "TypeScript",
-        "imageSrc": "skills/ts.png"
+        "imageSrc": "skills/ts.webp"
     },
     {
         "title": "PostgreSQL",
-        "imageSrc": "skills/postgresql.png"
+        "imageSrc": "skills/postgresql.webp"
     },
     {
         "title": "Figma",
-        "imageSrc": "skills/figma.png"
+        "imageSrc": "skills/figma.webp"
     },
     {
         "title": "Linux",
-        "imageSrc": "skills/linux.png"
+        "imageSrc": "skills/linux.webp"
     },
     {
         "title": "JavaScript",
-        "imageSrc": "skills/js.png"
+        "imageSrc": "skills/js.webp"
     },
     {
         "title": "Redux",
-        "imageSrc": "skills/redux.png"
+        "imageSrc": "skills/redux.webp"
     },
     {
         "title": "Git",
-        "imageSrc": "skills/git.png"
-    },
-    {
-        "title": "React-router",
-        "imageSrc": "skills/react-router.png"
+        "imageSrc": "skills/git.webp"
     },
     {
         "title": "Jest",
-        "imageSrc": "skills/jest.png"
+        "imageSrc": "skills/jest.webp"
     },
     {
         "title": "Storybook",
-        "imageSrc": "skills/storybook.png"
+        "imageSrc": "skills/storybook.webp"
     },
     {
         "title": "RTL",
-        "imageSrc": "skills/RTL.png"
+        "imageSrc": "skills/RTL.webp"
     },
     {
-        "title": "i18next",
-        "imageSrc": "skills/i18n.png"
+        "title": "Next.js",
+        "imageSrc": "skills/next.webp"
+    },
+    {
+        "title": "Cypress",
+        "imageSrc": "skills/cypress.webp"
+    },
+    {
+        "title": "Tailwind",
+        "imageSrc": "skills/tailwind.webp"
     }
 ]

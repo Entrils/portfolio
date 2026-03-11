@@ -54,10 +54,8 @@ export const CertificateSlider = ({ data }) => {
     }
 
     const nextIndex = slide === data.length - 1 ? 0 : slide + 1;
-    const prevIndex = slide === 0 ? data.length - 1 : slide - 1;
 
     markSlideAsLoaded(nextIndex);
-    markSlideAsLoaded(prevIndex);
   }, [data.length, markSlideAsLoaded, slide]);
 
   useEffect(() => {

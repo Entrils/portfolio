@@ -1,4 +1,4 @@
-﻿@import "../../vars.css";
+@import "../../vars.css";
 
 .container {
   color: var(--color-text);
@@ -27,58 +27,225 @@
   transform-origin: left;
 }
 
-.skillsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 30px;
-  justify-items: center;
+.bubbleBoard {
+  position: relative;
+  max-width: 980px;
+  min-height: 650px;
+  margin: 0 auto;
+  border-radius: 28px;
+  border: 1px solid rgba(126, 151, 198, 0.26);
+  background:
+    radial-gradient(circle at 50% 48%, rgba(35, 53, 88, 0.42), rgba(11, 15, 25, 0.96) 70%),
+    linear-gradient(160deg, rgba(14, 21, 35, 0.92), rgba(8, 11, 19, 0.92));
+  overflow: hidden;
 }
 
-.skillCard {
+.bubbleBoard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(163, 185, 235, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(163, 185, 235, 0.07) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: radial-gradient(circle at 50% 50%, black 50%, transparent 100%);
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 18px;
-  width: 100%;
-  max-width: 160px;
-  transition: transform 0.25s ease, border-color 0.25s ease;
-  cursor: default;
+  justify-content: center;
+  gap: 10px;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  will-change: transform;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(168, 192, 247, 0.32);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.16), transparent 45%),
+    linear-gradient(160deg, rgba(22, 30, 48, 0.9), rgba(12, 16, 28, 0.88));
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.38),
+    0 0 0 1px rgba(206, 220, 255, 0.08) inset;
+  transition: border-color 0.28s ease, box-shadow 0.28s ease;
 }
 
-.skillCard:hover {
-  transform: translateY(-6px);
-  border-color: rgba(200, 245, 96, 0.42);
+.bubble:hover {
+  border-color: rgba(200, 245, 96, 0.48);
+}
+
+.bubble[data-dragging="true"] {
+  cursor: grabbing;
+  border-color: rgba(200, 245, 96, 0.62);
+  box-shadow:
+    0 16px 38px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(200, 245, 96, 0.26) inset;
+}
+
+.mainBubble {
+  border-color: rgba(200, 245, 96, 0.52);
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(200, 245, 96, 0.2) inset;
+}
+
+.xlarge {
+  width: 248px;
+  height: 248px;
+}
+
+.large {
+  width: 170px;
+  height: 170px;
+}
+
+.medium {
+  width: 132px;
+  height: 132px;
+}
+
+.small {
+  width: 106px;
+  height: 106px;
 }
 
 .skillImageContainer {
-  background: var(--color-skillscont);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70px;
-  height: 70px;
+}
+
+.xlarge .skillImageContainer {
+  width: 86px;
+  height: 86px;
+}
+
+.large .skillImageContainer {
+  width: 62px;
+  height: 62px;
+}
+
+.medium .skillImageContainer {
+  width: 52px;
+  height: 52px;
+}
+
+.small .skillImageContainer {
+  width: 42px;
+  height: 42px;
 }
 
 .skillImageContainer img {
-  width: 40px;
+  width: 60%;
   height: auto;
+  pointer-events: none;
 }
 
 .skillName {
-  margin-top: 12px;
-  font-size: 14px;
+  margin: 0;
   font-weight: 600;
   color: var(--color-text);
   font-family: var(--font-inter);
-  user-select: none;
+  line-height: 1.2;
+  pointer-events: none;
 }
 
-@media screen and (max-width: 830px) {
-  .skillsGrid {
-    gap: 22px;
+@media screen and (min-width: 901px) {
+  .xlarge .skillName {
+    font-size: 23px;
+  }
+
+  .large .skillName {
+    font-size: 17px;
+  }
+
+  .medium .skillName {
+    font-size: 14px;
+  }
+
+  .small .skillName {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .bubbleBoard {
+    min-height: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .bubble {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none !important;
+    cursor: default;
+    touch-action: auto;
+  }
+
+  .xlarge {
+    width: 192px;
+    height: 192px;
+  }
+
+  .xlarge .skillImageContainer {
+    width: 72px;
+    height: 72px;
+  }
+
+  .large {
+    width: 146px;
+    height: 146px;
+  }
+
+  .medium {
+    width: 118px;
+    height: 118px;
+  }
+
+  .small {
+    width: 96px;
+    height: 96px;
+  }
+
+  .xlarge .skillName {
+    font-size: 19px;
+  }
+
+  .large .skillName {
+    font-size: 15px;
+  }
+
+  .medium .skillName {
+    font-size: 13px;
+  }
+
+  .small .skillName {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .container {
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+
+  .bubbleBoard {
+    gap: 12px;
+    padding: 14px;
   }
 }

@@ -1,7 +1,7 @@
 ﻿[
   {
     "title": "Админ-панель магазина",
-    "imageSrc": "projects/project.png",
+    "imageSrc": "projects/project.webp",
     "description": "Учебный проект по верстке интерфейса админки: таблицы, карточки, базовая сетка и адаптив.",
     "skills": ["HTML", "CSS"],
     "demo": "https://dashboard-entrils.netlify.app/",
@@ -9,7 +9,7 @@
   },
   {
     "title": "Интернет-магазин «Ями Нями»",
-    "imageSrc": "projects/yamiNyami.png",
+    "imageSrc": "projects/yamiNyami.webp",
     "description": "Полноценный pet-проект магазина сладостей: каталог, корзина, API-запросы, frontend на React и backend на Node.js/Express + PostgreSQL.",
     "skills": ["React", "Mobx", "Axios", "PostgreSQL", "Express", "Node.js"],
     "demo": "https://yami-nyami.netlify.app/",
@@ -17,7 +17,7 @@
   },
   {
     "title": "Лабораторные с курсов «Специалист»",
-    "imageSrc": "projects/specialistCourses.png",
+    "imageSrc": "projects/specialistCourses.webp",
     "description": "Сборник практических работ по frontend и JavaScript: компоненты, состояние, роутинг, Node.js. Использую как архив решений и прогресса.",
     "skills": ["Redux", "React", "JavaScript", "Node.js"],
     "demo": "https://github.com/Entrils/SpecialistCoursesProjects",
@@ -25,7 +25,7 @@
   },
   {
     "title": "Шахматы",
-    "imageSrc": "projects/chess.png",
+    "imageSrc": "projects/chess.webp",
     "description": "Шахматная игра на React + TypeScript с объектной моделью фигур и логикой ходов.",
     "skills": ["React", "TypeScript", "CSS"],
     "demo": "https://entrils-chess.netlify.app/",
@@ -33,7 +33,7 @@
   },
   {
     "title": "Генератор турнирных сеток",
-    "imageSrc": "projects/tournaments.png",
+    "imageSrc": "projects/tournaments.webp",
     "description": "Инструмент для создания турнирных таблиц для личного использования. Основной фокус: UX редактирования и управление состоянием.",
     "skills": ["React", "Redux", "CSS"],
     "demo": "https://entrilstourneyapp.netlify.app/",
@@ -41,7 +41,7 @@
   },
   {
     "title": "Production Project",
-    "imageSrc": "projects/pp.png",
+    "imageSrc": "projects/pp.webp",
     "description": "Крупный проект из курса «Продвинутый фронтенд»: TypeScript, React, ручная настройка Webpack, unit-тесты и Storybook.",
     "skills": ["React", "TypeScript", "SCSS", "Jest", "Redux", "Storybook"],
     "demo": "https://entrils-prod-app.netlify.app",
@@ -49,7 +49,7 @@
   },
   {
     "title": "Designer Portfolio",
-    "imageSrc": "projects/semary.png",
+    "imageSrc": "projects/semary.webp",
     "description": "Одностраничный сайт-портфолио дизайнера по макету Figma. Фокус на аккуратной верстке и адаптиве.",
     "skills": ["React", "HTML", "CSS"],
     "demo": "https://semary.netlify.app/",
@@ -57,7 +57,7 @@
   },
   {
     "title": "To-Do List",
-    "imageSrc": "projects/todolist.png",
+    "imageSrc": "projects/todolist.webp",
     "description": "Менеджер задач с добавлением, редактированием, фильтрацией и сохранением состояния в localStorage.",
     "skills": ["React", "HTML", "CSS"],
     "demo": "https://entrils-todo-list.netlify.app/",
@@ -65,7 +65,7 @@
   },
   {
     "title": "Idle Village",
-    "imageSrc": "projects/idle-village.png",
+    "imageSrc": "projects/idle-village.webp",
     "description": "Инкрементальная игра на React + TypeScript + Redux. Реализованы кастомные хуки, система достижений, уведомления и сохранение прогресса.",
     "skills": ["React", "TypeScript", "Redux", "CSS"],
     "demo": "https://entrils-idle-village.netlify.app/",
@@ -73,7 +73,7 @@
   },
   {
     "title": "Stats Tracker",
-    "imageSrc": "projects/stats-tracker.png",
+    "imageSrc": "projects/stats-tracker.webp",
     "description": "Data-heavy проект со статистикой игроков: OCR, визуализация данных, React/Vite, Firebase Auth + Firestore и Node.js/Express API.",
     "skills": ["React", "JavaScript", "OCR", "CSS", "Firebase", "Node.js"],
     "demo": "https://fragpunktracker.fun/players",
@@ -81,7 +81,7 @@
   },
   {
     "title": "Редактор параметров",
-    "imageSrc": "projects/parEdit.png",
+    "imageSrc": "projects/parEdit.webp",
     "description": "Тестовое задание, задача которого сделать расширяемый редактор параметров react + typescript + Jest  + RTL tests",
     "skills": ["React", "TypeScript", "Jest", "RTL"],
     "demo": "https://parametredit.netlify.app/",
@@ -89,7 +89,7 @@
   },
   {
     "title": "Каталог кухонь",
-    "imageSrc": "projects/sepium.png",
+    "imageSrc": "projects/sepium.webp",
     "description": "Тестовое задание, задача которого сделать pixel perfect SPA по макету Figma на ванильном JS. Реализованы свайперы, модальное окно зума, переключение состояний",
     "skills": ["JavaScript", "Figma", "CSS"],
     "demo": "https://sepium-test-task.netlify.app/",
@@ -97,7 +97,7 @@
   },
   {
     "title": "Тарифы фитнеса",
-    "imageSrc": "projects/test4a.png",
+    "imageSrc": "projects/test4a.webp",
     "description": "Тестовое задание, задача которого реализовать pixel-perfect по макету Figma + адаптив. Выборы тарифа, таймер офера, проверка согласия и анимации.",
     "skills": ["React", "Next,js", "Tailwind", "RTK Query"],
     "demo": "https://testtask4a.netlify.app/",

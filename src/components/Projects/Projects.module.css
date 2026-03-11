@@ -1,18 +1,34 @@
-﻿@import "../../vars.css";
+@import "../../vars.css";
 
 .container {
-  margin: 100px 10%;
+  margin: 118px 0 40px;
   color: var(--color-text);
   text-align: center;
+  position: relative;
+  padding: 0 10%;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 80px 6% -26px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(116, 196, 255, 0.2), transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(200, 245, 96, 0.16), transparent 52%),
+    rgba(10, 14, 21, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  pointer-events: none;
 }
 
 .title {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 800;
   font-family: var(--font-inter);
-  margin-bottom: 60px;
+  margin-bottom: 34px;
   position: relative;
   display: inline-block;
+  z-index: 1;
 }
 
 .underline {
@@ -25,11 +41,110 @@
   display: block;
 }
 
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 34px;
+.carouselShell {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.carousel {
+  position: relative;
+  min-height: 620px;
+  outline: none;
+  perspective: 1500px;
+  touch-action: pan-y;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(540px, 80vw);
+  opacity: 0;
+  transform-style: preserve-3d;
+  will-change: transform, opacity, filter;
+}
+
+.slideInner {
+  width: 100%;
+  transform-style: preserve-3d;
+}
+
+.slide[data-state="center"] {
+  cursor: grab;
+}
+
+.slide[data-state="prev"],
+.slide[data-state="next"] {
+  cursor: pointer;
+}
+
+.controls {
+  position: relative;
+  z-index: 1;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  justify-items: stretch;
-  align-items: stretch;
+  gap: 16px;
+}
+
+.navButton {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(12, 18, 28, 0.72);
+  color: var(--color-text);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.navButton:hover {
+  transform: translateY(-2px);
+  border-color: rgba(200, 245, 96, 0.56);
+  background: rgba(16, 24, 36, 0.92);
+}
+
+.counter {
+  min-width: 72px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+@media screen and (max-width: 980px) {
+  .container {
+    margin: 92px 5% 32px;
+    padding: 0;
+  }
+
+  .container::before {
+    display: none;
+  }
+
+  .title {
+    margin-bottom: 28px;
+  }
+
+  .carousel {
+    min-height: 560px;
+  }
+
+  .slide {
+    width: min(430px, 92vw);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .carousel {
+    min-height: 520px;
+  }
+
+  .controls {
+    margin-top: 14px;
+  }
 }
