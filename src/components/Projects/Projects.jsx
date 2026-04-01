@@ -7,7 +7,7 @@ import { ProjectCard } from "./ProjectCard";
 import styles from "./Projects.module.css";
 
 const TRANSITION_DURATION = 0.78;
-const AUTOPLAY_DELAY_MS = 5000;
+const AUTOPLAY_DELAY_MS = 9000;
 
 const loopIndex = (index, total) => (index + total) % total;
 
